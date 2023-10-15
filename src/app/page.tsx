@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import HomePageLayout from "./(withoutlayout)/layout";
 import CarouselPage from "@/components/Carousel/CarouselPage";
 import Service from "@/components/AvailableService/Service";
