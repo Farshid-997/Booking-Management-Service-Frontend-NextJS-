@@ -1,11 +1,18 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import HomePageLayout from "./(withoutlayout)/layout";
+import CarouselPage from "@/components/Carousel/CarouselPage";
+import Service from "@/components/AvailableService/Service";
+import UpComingService from "@/components/UpComingService/UpComing";
+import Review from "@/components/Review/Review";
 
 export default function Home() {
   return (
     <HomePageLayout>
-      <h1>New tag</h1>
+      <CarouselPage />
+      <Service />
+      <UpComingService />
+      <Review />
     </HomePageLayout>
   );
 }

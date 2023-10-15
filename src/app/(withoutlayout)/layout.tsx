@@ -1,78 +1,62 @@
 "use client";
-
 import { Layout, Menu } from "antd";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  MenuOutlined,
+  PhoneOutlined,
+  DashboardOutlined,
+  LoginOutlined,
+} from "@ant-design/icons"; // Import icons
+import logo from "../../assets/MainLogo.png";
+
 const { Header, Content, Footer } = Layout;
+const { SubMenu } = Menu;
+
 const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
-  const paths = [
-    {
-      page: "Home",
-      route: "/",
-    },
-    {
-      page: "About",
-      route: "/about",
-    },
-    {
-      page: "Contact",
-      route: "/contact",
-    },
-    {
-      page: "News",
-      route: "/news",
-    },
-    {
-      page: "News_Details",
-      route: "/news/1",
-    },
-    {
-      page: "Filtered_News",
-      route: "/news/details/23-Jun-2022/sports",
-    },
-    {
-      page: "Blog",
-      route: "/news/blog",
-    },
-    {
-      page: "Article",
-      route: "/news/article/sports",
-    },
-    {
-      page: "Admin",
-      route: "/admin",
-    },
-    {
-      page: "Album",
-      route: "/album",
-    },
-    {
-      page: "Dashboard",
-      route: "/dashboard",
-    },
-  ];
+  const headerStyle = {
+    backgroundColor: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  };
+
   return (
     <Layout className="layout">
-      <Header style={{ display: "flex", alignItems: "center" }}>
-        <div className="demo-logo" />
+      <Header style={headerStyle}>
+        <div className="demo-logo">
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Logo"
+              width={60}
+              height={60}
+              style={{ marginTop: "16px" }}
+            />
+          </Link>
+        </div>
         <Menu
           style={{
-            display: "flex",
-            justifyContent: "space-between",
+            backgroundColor: "white",
           }}
-          theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
-          items={new Array(3).fill(null).map((_, index) => {
-            const key = index + 1;
-            return {
-              key,
-              label: `nav ${key}`,
-            };
-          })}
-        />
-      </Header>
-      <Content style={{ padding: "0 50px", width: "100%" }}>{children}</Content>
+        >
+          <Menu.Item key="home" icon={<LoginOutlined />}>
+            <Link href="/">Login</Link>
+          </Menu.Item>
 
-      <Footer style={{ textAlign: "center" }}>Booking Service</Footer>
+          <SubMenu key="more" icon={<MenuOutlined />} title="More">
+            <Menu.Item key="dashboard" icon={<DashboardOutlined />}>
+              <Link href="/user">Dashboard</Link>
+            </Menu.Item>
+            <Menu.Item key="contact" icon={<PhoneOutlined />}>
+              <Link href="/contact">Contact Us</Link>
+            </Menu.Item>
+          </SubMenu>
+        </Menu>
+      </Header>
+      <Content style={{ height: "auto" }}>{children}</Content>
+      <Footer style={{ textAlign: "center" }}>Booking Service 2023</Footer>
     </Layout>
   );
 };

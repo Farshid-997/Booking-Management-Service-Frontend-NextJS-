@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito:ital,wght@0,400;1,500&family=Raleway&family=Roboto&family=Roboto+Condensed&family=Roboto+Flex:opsz@8..144&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Lato", sans-serif;
 }
