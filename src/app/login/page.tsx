@@ -20,6 +20,7 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       const res = await userLogin({ ...data }).unwrap();
+      console.log("res", res);
       storeUserInfo({ token: res?.data?.token });
     } catch (err: any) {
       console.log(err.message);
