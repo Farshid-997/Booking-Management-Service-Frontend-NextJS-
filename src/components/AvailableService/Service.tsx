@@ -3,12 +3,13 @@
 import { Card } from "antd";
 import Image from "next/image";
 import { Col, Divider, Row } from "antd";
+import img1 from "../../assets/arrangement9.png";
 const { Meta } = Card;
 export default function Service() {
   const contentStyle: React.CSSProperties = {
     color: "black",
     textAlign: "center",
-    marginTop: "4rem",
+    marginTop: "1rem",
     fontSize: "50px",
   };
 
@@ -20,6 +21,11 @@ export default function Service() {
   };
   return (
     <div>
+      <Image
+        src={img1}
+        alt=""
+        style={{ marginLeft: "48rem", marginTop: "3rem" }}
+      ></Image>
       <h2 style={contentStyle}>Available Service</h2>
 
       <Row style={rowStyle}>

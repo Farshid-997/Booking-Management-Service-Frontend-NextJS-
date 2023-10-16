@@ -1,5 +1,7 @@
 "use client";
 import { Col, Divider, Row, Card } from "antd";
+import Image from "next/image";
+import img1 from "../../assets/dusk12.png";
 const { Meta } = Card;
 export default function Review() {
   const reviewStyle: React.CSSProperties = {
@@ -11,13 +13,14 @@ export default function Review() {
     marginBottom: "2rem",
   };
   const mainDiv = {
-    paddingLeft: "15rem",
+    paddingLeft: "5rem",
     paddingRight: "5rem",
   };
+
   const contentStyle: React.CSSProperties = {
     color: "black",
     textAlign: "center",
-    marginTop: "4rem",
+    marginTop: "1rem",
     fontSize: "50px",
     marginBottom: "4rem",
   };
@@ -28,6 +31,11 @@ export default function Review() {
   };
   return (
     <div style={mainDiv}>
+      <Image
+        src={img1}
+        alt=""
+        style={{ marginLeft: "48rem", marginTop: "3rem" }}
+      ></Image>
       <h2 style={contentStyle}>User Review</h2>
       <div style={reviewStyle}>
         <Row style={rowStyle}>
