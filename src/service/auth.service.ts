@@ -8,7 +8,6 @@ export const storeUserInfo = ({ token }: { token: string }) => {
 
 export const getUserInfo = () => {
   const authToken = getFromLocalStorage(authKey);
-  console.log("auth", authToken);
 
   if (authToken) {
     const decodedData = decodedToken(authToken);

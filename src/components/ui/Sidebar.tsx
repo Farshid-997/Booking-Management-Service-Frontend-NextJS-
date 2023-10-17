@@ -5,13 +5,14 @@ import { Layout, Menu } from "antd";
 
 import { sidebarItems } from "@/constants/sidebarItems";
 import { USER_ROLE } from "@/constants/role";
+import { getUserInfo } from "@/service/auth.service";
 
 const { Sider } = Layout;
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
-  const role = USER_ROLE.ADMIN;
+  const { role } = getUserInfo() as any;
 
   return (
     <Sider
@@ -31,13 +32,13 @@ const SideBar = () => {
       <div
         style={{
           color: "white",
-          fontSize: "2rem",
+          fontSize: "20px",
           textAlign: "center",
           fontWeight: "bold",
           marginBottom: "1rem",
         }}
       >
-        Booking-Service
+        {role} Panel
       </div>
       <Menu
         theme="dark"

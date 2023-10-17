@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import Image from "next/image";
 import { Col, Divider, Row } from "antd";
 import img1 from "../../assets/arrangement9.png";
@@ -42,6 +42,9 @@ export default function Service() {
           >
             {" "}
             <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Button type="primary" style={{ marginTop: "8px" }}>
+              Book Now
+            </Button>
           </Card>
         </Col>
 
@@ -57,6 +60,10 @@ export default function Service() {
             }
           >
             <Meta title="Europe Street beat" description="www.instagram.com" />
+
+            <Button type="primary" style={{ marginTop: "8px" }}>
+              Book Now
+            </Button>
           </Card>
         </Col>
         <Col span={6}>
@@ -71,6 +78,9 @@ export default function Service() {
             }
           >
             <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Button type="primary" style={{ marginTop: "8px" }}>
+              Book Now
+            </Button>
           </Card>
         </Col>
 
@@ -86,6 +96,9 @@ export default function Service() {
             }
           >
             <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Button type="primary" style={{ marginTop: "8px" }}>
+              Book Now
+            </Button>
           </Card>
         </Col>
       </Row>
