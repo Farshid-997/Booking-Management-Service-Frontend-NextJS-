@@ -15,6 +15,10 @@ import {
 } from "@ant-design/icons"; // Import icons
 import logo from "../../assets/MainLogo.png";
 
+import { authKey } from "@/constants/storageKey";
+import { removeUserInfo } from "@/service/auth.service";
+import { useRouter } from "next/navigation";
+
 const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
@@ -47,7 +51,11 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
     color: "purple",
     height: "20px",
   };
-
+  const router = useRouter();
+  const logout = () => {
+    removeUserInfo(authKey);
+    router.push("/login");
+  };
   return (
     <Layout className="layout">
       <Header style={headerStyle}>
@@ -69,9 +77,14 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
           mode="horizontal"
         >
           <ShoppingCartOutlined />
+
           <Menu.Item key="home" icon={<LoginOutlined />}>
-            <Link href="/">Login</Link>
+            <Link href="/login">Login</Link>
           </Menu.Item>
+
+          {/* <Menu.Item key="home" icon={<LoginOutlined />}>
+            <Link href="/login">Login</Link>
+          </Menu.Item> */}
 
           <SubMenu key="more" icon={<MenuOutlined />} title="More">
             <Menu.Item key="dashboard" icon={<DashboardOutlined />}>

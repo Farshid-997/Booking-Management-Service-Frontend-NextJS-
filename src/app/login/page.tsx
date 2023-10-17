@@ -1,5 +1,5 @@
 "use client";
-import { Button, Col, Input, Row } from "antd";
+import { Button, Col, Input, Row, message } from "antd";
 import loginImage from "../../assets/login-image.png";
 import Image from "next/image";
 import Form from "@/components/Forms/Form";
@@ -9,19 +9,25 @@ import Link from "next/link";
 import { useUserLoginMutation } from "@/redux/api/authApi";
 import { storeUserInfo } from "@/service/auth.service";
 import HomePageLayout from "../(withoutlayout)/layout";
-
+import { useRouter } from "next/navigation";
 type FormValues = {
   email: string;
   password: string;
 };
 
 const LoginPage = () => {
+  const router = useRouter();
   const [userLogin] = useUserLoginMutation();
+
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
       const res = await userLogin({ ...data }).unwrap();
-      console.log("res", res);
-      storeUserInfo({ token: res?.data?.token });
+
+      storeUserInfo({ token: res?.token });
+      if (res?.token) {
+        message.success("User Login successfully!");
+        router.push("/user");
+      }
     } catch (err: any) {
       console.log(err.message);
     }

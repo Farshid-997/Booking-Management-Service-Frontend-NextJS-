@@ -3,6 +3,8 @@ import {
   ProfileOutlined,
   TableOutlined,
   AppstoreOutlined,
+  UserOutlined,
+  FolderAddOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import { USER_ROLE } from "./role";
@@ -14,7 +16,7 @@ export const sidebarItems = (role: string) => {
       icon: <ProfileOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/profile`}>Account Profile</Link>,
+          label: <Link href={`/${role}`}>Account Profile</Link>,
           key: `/${role}/profile`,
         },
         {
@@ -26,35 +28,60 @@ export const sidebarItems = (role: string) => {
   ];
 
   const commonAdminSidebarItems: MenuProps["items"] = [
-    {
-      label: <Link href={`/${role}/manage-student`}>Manage Students</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/manage-student`,
-    },
+    // {
+    //   label: <Link href={`/${role}/manage-user`}>Manage Users</Link>,
+    //   icon: <TableOutlined />,
+    //   key: `/${role}/manage-user`,
+    // },
   ];
 
   const adminSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
     {
+      label: "My Profile",
+      key: "my-profile",
+      icon: <UserOutlined />,
+      children: [
+        {
+          label: <Link href={`/${role}/my-profile`}>My Profile</Link>,
+          key: `/${role}/my-profile`,
+        },
+      ],
+    },
+
+    {
       label: "Manage User",
       key: "manage-user",
       icon: <TableOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/academic/faculty`}>User</Link>,
-          key: `/${role}/academic/faculty`,
+          label: <Link href={`/${role}/manage-user`}>Manage User</Link>,
+          key: `/${role}/manage-user`,
         },
       ],
     },
+
     {
-      label: "Management",
-      key: "management",
-      icon: <AppstoreOutlined />,
+      label: "Add Service",
+      key: "add-service",
+      icon: <FolderAddOutlined />,
       children: [
         {
-          label: <Link href={`/${role}/department`}>Booking</Link>,
-          key: `/${role}/department`,
+          label: <Link href={`/${role}/add-service`}>Add Service</Link>,
+          key: `/${role}/add-service`,
+        },
+      ],
+    },
+
+    {
+      label: "Manage Service",
+      key: "manage-service",
+      icon: <TableOutlined />,
+      children: [
+        {
+          label: <Link href={`/${role}/manage-service`}>Manage Service</Link>,
+          key: `/${role}/manage-service`,
         },
       ],
     },
@@ -68,11 +95,13 @@ export const sidebarItems = (role: string) => {
       icon: <TableOutlined />,
       key: `/${role}/admin`,
     },
+
     {
       label: <Link href={`/${role}/user`}>Manage User</Link>,
       icon: <TableOutlined />,
       key: `/${role}/user`,
     },
+
     {
       label: "Manage permission",
       key: "manage-permission",
@@ -88,10 +117,16 @@ export const sidebarItems = (role: string) => {
 
   const userSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
+    // {
+    //   label: <Link href={`/${role}/profile`}>My Profile</Link>,
+    //   icon: <TableOutlined />,
+    //   key: `/${role}/profile`,
+    // },
+
     {
-      label: <Link href={`/${role}/courses`}>My Services</Link>,
+      label: <Link href={`/${role}/service`}>My Services</Link>,
       icon: <TableOutlined />,
-      key: `/${role}/courses`,
+      key: `/${role}/service`,
     },
   ];
 

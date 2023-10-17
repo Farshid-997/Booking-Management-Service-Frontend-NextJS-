@@ -1,5 +1,5 @@
 "use client";
-import { Button, Col, Input, Row } from "antd";
+import { Button, Col, Input, Row, message } from "antd";
 import loginImage from "../../assets/login-image.png";
 import Image from "next/image";
 import Form from "@/components/Forms/Form";
@@ -7,6 +7,9 @@ import FormInput from "@/components/Forms/FormInput";
 import { SubmitHandler } from "react-hook-form";
 import Link from "next/link";
 import HomePageLayout from "../(withoutlayout)/layout";
+import { useUserRegisterMutation } from "@/redux/api/authApi";
+
+import { useRouter } from "next/navigation";
 
 type FormValues = {
   name: string;
@@ -19,10 +22,20 @@ type FormValues = {
 };
 
 const RegisterPage = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const router = useRouter();
+  const [userRegister] = useUserRegisterMutation();
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      console.log(data);
-    } catch (err) {}
+      const res = await userRegister({ ...data }).unwrap();
+      console.log(res);
+      if (res?.id) {
+        router.push("/login");
+        message.success("User Registered successfully!");
+      }
+      //  storeUserInfo({ data: res?.data });
+    } catch (err: any) {
+      console.log(err.message);
+    }
   };
   return (
     <HomePageLayout>

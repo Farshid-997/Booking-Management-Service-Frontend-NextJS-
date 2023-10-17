@@ -6,22 +6,24 @@ export const storeUserInfo = ({ token }: { token: string }) => {
   return setToLocalStorage(authKey, token as string);
 };
 
-// export const getUserInfo = () => {
-//   const authToken = getFromLocalStorage(authKey);
+export const getUserInfo = () => {
+  const authToken = getFromLocalStorage(authKey);
+  console.log("auth", authToken);
 
-//   if (authToken) {
-//     const decodedData = decodedToken(authToken);
-//     return decodedData;
-//   } else {
-//     return "";
-//   }
-// };
+  if (authToken) {
+    const decodedData = decodedToken(authToken);
 
-// export const isLoggedIn = () => {
-//   const authToken = getFromLocalStorage(authKey);
-//   return !!authToken;
-// };
+    return decodedData;
+  } else {
+    return "";
+  }
+};
 
-// export const removeUserInfo = (key: string) => {
-//   return localStorage.removeItem(key);
-// };
+export const isLoggedIn = () => {
+  const authToken = getFromLocalStorage(authKey);
+  return !!authToken;
+};
+
+export const removeUserInfo = (key: string) => {
+  return localStorage.removeItem(key);
+};
