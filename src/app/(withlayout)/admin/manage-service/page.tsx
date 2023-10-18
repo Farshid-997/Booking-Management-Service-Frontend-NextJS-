@@ -1,7 +1,7 @@
 "use client";
 
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import Link from "next/link";
 import {
   DeleteOutlined,
@@ -14,7 +14,10 @@ import { useDebounced } from "@/redux/hooks/hooks";
 import UMTable from "@/components/ui/Table";
 
 import ActionBar from "@/components/ui/ActionBar/ActionBar";
-import { useGetServiceQuery } from "@/redux/api/serviceApi";
+import {
+  useDeleteServiceMutation,
+  useGetServiceQuery,
+} from "@/redux/api/serviceApi";
 
 const ManageService = () => {
   const query: Record<string, any> = {};
@@ -24,7 +27,8 @@ const ManageService = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-
+  const { data, isLoading } = useGetServiceQuery({ ...query });
+  const [deleteService] = useDeleteServiceMutation();
   query["limit"] = size;
   query["page"] = page;
   query["sortBy"] = sortBy;
@@ -39,11 +43,18 @@ const ManageService = () => {
   if (!!debouncedSearchTerm) {
     query["searchTerm"] = debouncedSearchTerm;
   }
-  const { data, isLoading } = useGetServiceQuery({ ...query });
-  console.log("data", data);
 
   const service = data?.service;
   const meta = data?.meta;
+
+  const deleteHandler = async (id: string) => {
+    try {
+      await deleteService(id);
+      message.success("Service Deleted successfully!");
+    } catch (err: any) {
+      console.log(err.message);
+    }
+  };
 
   const columns = [
     {
@@ -84,20 +95,19 @@ const ManageService = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/manage-service/edit/${data?.id}`}>
+            <Link href={`/admin/manage-service/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
                   marginBottom: "3px",
                 }}
-                onClick={() => console.log(data)}
                 type="primary"
               >
                 <EditOutlined />
               </Button>
             </Link>
             <Button
-              onClick={() => console.log(data)}
+              onClick={() => deleteHandler(data)}
               type="primary"
               danger
               style={{ marginLeft: "4px" }}

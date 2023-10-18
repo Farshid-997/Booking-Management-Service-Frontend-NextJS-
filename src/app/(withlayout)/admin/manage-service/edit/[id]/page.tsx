@@ -4,7 +4,10 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import ActionBar from "@/components/ui/ActionBar/ActionBar";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useGetSingleServiceQuery } from "@/redux/api/serviceApi";
+import {
+  useGetSingleServiceQuery,
+  useUpdateServiceMutation,
+} from "@/redux/api/serviceApi";
 import { getUserInfo } from "@/service/auth.service";
 import { Button, Col, Row, message } from "antd";
 
@@ -23,17 +26,20 @@ export default function EditServicePage({ params }: IDProps) {
   const { role } = getUserInfo() as any;
   const { id } = params;
   const { data, isLoading } = useGetSingleServiceQuery(id);
-  console.log("data", data);
+  const [updateService] = useUpdateServiceMutation();
 
   const defaultValues = {
     name: data?.name || "",
+    description: data?.description || "",
+    price: data?.price || "",
+    location: data?.location || "",
+    category: data?.category || "",
+    availability: data?.availability || "",
   };
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (values: { name: string }) => {
     try {
-      //  const res = await createService({ ...data }).unwrap();
-      //  if (res) {
-      //    message.success("Service Updated successfully!");
-      //  }
+      await updateService({ id, body: values });
+      message.success("Service Updated successfully!");
     } catch (err: any) {
       console.log(err.message);
     }

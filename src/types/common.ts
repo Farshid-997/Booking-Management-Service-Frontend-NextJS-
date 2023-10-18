@@ -38,3 +38,8 @@ export interface IUser {
   address: string;
   profileImg: string;
 }
+export interface IBooking {
+  id: any;
+  date: string;
+  status: string;
+}

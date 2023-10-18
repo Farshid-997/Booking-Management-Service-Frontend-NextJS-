@@ -1,28 +1,3 @@
-// "use client";
-
-// import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-// import { getUserInfo } from "@/service/auth.service";
-
-// export default function page() {
-//   const { role } = getUserInfo() as any;
-//   return (
-//     <div>
-//       <UMBreadCrumb
-//         items={[
-//           {
-//             label: `${role}`,
-//             link: `/${role}`,
-//           },
-//           {
-//             label: "manage-user",
-//             link: `/${role}/manage-user`,
-//           },
-//         ]}
-//       />
-//       <h1>Manage the Users</h1>
-//     </div>
-//   );
-// }
 "use client";
 
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
@@ -118,7 +93,7 @@ const ManageUser = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/manage-user/edit/${data?.id}`}>
+            <Link href={`/admin/manage-user/edit/${data}`}>
               <Button
                 style={{
                   margin: "0px 5px",
@@ -184,12 +159,6 @@ const ManageUser = () => {
           }}
         />
         <div>
-          {/* <Link href="/admin/add-service">
-            <Button type="primary" style={{ marginRight: "2rem" }}>
-              Create
-            </Button>
-          </Link> */}
-
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               style={{ margin: "0px 5px" }}

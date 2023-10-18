@@ -1,7 +1,7 @@
 import { IMeta, IService } from "@/types";
 import { baseApi } from "./baseApi";
 const SERVICE_URL = "/service";
-
+//@ts-ignore
 export const serviceApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     createService: build.mutation({
@@ -40,6 +40,15 @@ export const serviceApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: `${SERVICE_URL}/${data.id}`,
         method: "PATCH",
+        data: data.body,
+      }),
+      invalidatesTags: ["service"],
+    }),
+
+    deleteService: build.mutation({
+      query: (id) => ({
+        url: `${SERVICE_URL}/${id}`,
+        method: "DELETE",
       }),
       invalidatesTags: ["service"],
     }),
@@ -51,4 +60,5 @@ export const {
   useGetServiceQuery,
   useGetSingleServiceQuery,
   useUpdateServiceMutation,
+  useDeleteServiceMutation,
 } = serviceApi;

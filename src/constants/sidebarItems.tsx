@@ -38,17 +38,6 @@ export const sidebarItems = (role: string) => {
   const adminSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
     ...commonAdminSidebarItems,
-    {
-      label: "My Profile",
-      key: "my-profile",
-      icon: <UserOutlined />,
-      children: [
-        {
-          label: <Link href={`/${role}/my-profile`}>My Profile</Link>,
-          key: `/${role}/my-profile`,
-        },
-      ],
-    },
 
     {
       label: "Manage User",
@@ -82,6 +71,18 @@ export const sidebarItems = (role: string) => {
         {
           label: <Link href={`/${role}/manage-service`}>Manage Service</Link>,
           key: `/${role}/manage-service`,
+        },
+      ],
+    },
+
+    {
+      label: "Manage Booking",
+      key: "manage-booking",
+      icon: <TableOutlined />,
+      children: [
+        {
+          label: <Link href={`/${role}/manage-booking`}>Manage Booking</Link>,
+          key: `/${role}/manage-booking`,
         },
       ],
     },
