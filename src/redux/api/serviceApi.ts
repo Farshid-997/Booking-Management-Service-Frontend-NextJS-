@@ -1,3 +1,4 @@
+import { IMeta, IService } from "@/types";
 import { baseApi } from "./baseApi";
 const SERVICE_URL = "/service";
 
@@ -12,15 +13,42 @@ export const serviceApi = baseApi.injectEndpoints({
       invalidatesTags: ["service"],
     }),
 
-    // userRegister: build.mutation({
-    //   query: (registerData) => ({
-    //     url: `${SERVICE_URL}/signup`,
-    //     method: "POST",
-    //     data: registerData,
-    //   }),
-    //   invalidatesTags: ["user"],
-    // }),
+    getService: build.query({
+      query: (arg: Record<string, any>) => ({
+        url: `${SERVICE_URL}`,
+        method: "GET",
+        params: arg,
+      }),
+      transformResponse: (response: IService[], meta: IMeta) => {
+        return {
+          service: response,
+          meta,
+        };
+      },
+      providesTags: ["service"],
+    }),
+
+    getSingleService: build.query({
+      query: (id: string | string[] | undefined) => ({
+        url: `${SERVICE_URL}/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["service"],
+    }),
+
+    updateService: build.mutation({
+      query: (data) => ({
+        url: `${SERVICE_URL}/${data.id}`,
+        method: "PATCH",
+      }),
+      invalidatesTags: ["service"],
+    }),
   }),
 });
 
-export const { useCreateServiceMutation } = serviceApi;
+export const {
+  useCreateServiceMutation,
+  useGetServiceQuery,
+  useGetSingleServiceQuery,
+  useUpdateServiceMutation,
+} = serviceApi;

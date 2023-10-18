@@ -1,6 +1,7 @@
 import { authKey } from "@/constants/storageKey";
+import { getNewAccessToken } from "@/service/auth.service";
 import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
-import { getFromLocalStorage } from "@/utils/local-storage";
+import { getFromLocalStorage, setToLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
 const instance = axios.create();
@@ -36,7 +37,17 @@ instance.interceptors.response.use(
     };
     return responseObject;
   },
-  function (error) {
+  async function (error) {
+    const config = error?.config;
+    if (error?.response?.status === 403 && !config.sent) {
+      config.sent = true;
+      const response = await getNewAccessToken();
+      const token = response?.data?.token;
+      config.headers["Authorization"] = token;
+      setToLocalStorage(authKey, token);
+      console.log("access from instance", token);
+      return instance(config);
+    }
     console.log(error);
     const responseObject: IGenericErrorResponse = {
       statusCode: error?.response?.data?.statusCode || 500,
