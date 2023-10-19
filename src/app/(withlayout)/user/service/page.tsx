@@ -15,7 +15,7 @@ type FormValues = {
 export default function Booking() {
   const [createBooking] = useCreateBookingMutation();
   const router = useRouter();
-  router.push("/payment");
+  router.push("/user/payment");
   const style = {
     marginTop: "3rem",
     marginLeft: "1.8rem",
