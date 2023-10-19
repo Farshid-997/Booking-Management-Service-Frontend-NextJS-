@@ -1,5 +1,6 @@
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { getUserInfo } from "@/service/auth.service";
+
 import React from "react";
 
 export default function page() {
@@ -22,7 +23,7 @@ export default function page() {
   />;
   return (
     <div>
-      <h1>Manage Admin</h1>
+      <h2>Manage Admin</h2>
     </div>
   );
 }

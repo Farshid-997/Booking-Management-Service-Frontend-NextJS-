@@ -2,22 +2,19 @@
 
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { Button, Input, message } from "antd";
-import Link from "next/link";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  ReloadOutlined,
-} from "@ant-design/icons";
+
+import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
 import { useDebounced } from "@/redux/hooks/hooks";
 import UMTable from "@/components/ui/Table";
 
 import ActionBar from "@/components/ui/ActionBar/ActionBar";
+
 import {
-  useDeleteServiceMutation,
-  useGetServiceQuery,
-} from "@/redux/api/serviceApi";
+  useDeleteBookingMutation,
+  useGetBookingQuery,
+} from "@/redux/api/bookingApi";
 
 const ManageBooking = () => {
   const query: Record<string, any> = {};
@@ -27,8 +24,9 @@ const ManageBooking = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const { data, isLoading } = useGetServiceQuery({ ...query });
-  const [deleteService] = useDeleteServiceMutation();
+  const { data, isLoading } = useGetBookingQuery({ ...query });
+
+  const [deleteBooking] = useDeleteBookingMutation();
   query["limit"] = size;
   query["page"] = page;
   query["sortBy"] = sortBy;
@@ -44,13 +42,13 @@ const ManageBooking = () => {
     query["searchTerm"] = debouncedSearchTerm;
   }
 
-  const service = data?.service;
+  const booking = data?.booking;
   const meta = data?.meta;
 
   const deleteHandler = async (id: string) => {
     try {
-      await deleteService(id);
-      message.success("Service Deleted successfully!");
+      await deleteBooking(id);
+      message.success("User Booking Deleted  successfully!");
     } catch (err: any) {
       console.log(err.message);
     }
@@ -63,31 +61,67 @@ const ManageBooking = () => {
       sorter: true,
     },
     {
-      title: "Name",
-      dataIndex: "name",
+      title: "User Name",
+      dataIndex: "user.name",
+      render: function (data: any, record: any) {
+        const userName = record.user?.name || "User Not Found";
+        return userName;
+      },
     },
     {
-      title: "price",
-      dataIndex: "price",
-      sorter: true,
-    },
-    {
-      title: "Description",
-      dataIndex: "description".slice(0, 11),
-    },
-    {
-      title: "location",
-      dataIndex: "location",
+      title: "status",
+      dataIndex: "status",
     },
 
     {
-      title: "Availability",
-      dataIndex: "availability",
+      title: "Price",
+      dataIndex: "s",
+      render: function (data: any, record: any) {
+        const price = record.service?.price || "Price not found";
+        return price;
+      },
     },
 
     {
-      title: "Category",
-      dataIndex: "category",
+      title: "Date",
+      dataIndex: "date",
+    },
+    {
+      title: "Service Name",
+      dataIndex: "service.name",
+      render: function (data: any, record: any) {
+        const serviceName = record.service?.name || "Service name Not Found";
+        return serviceName;
+      },
+    },
+
+    {
+      title: "Service Category",
+      dataIndex: "service.category",
+      render: function (data: any, record: any) {
+        const serviceCategory =
+          record.service?.category || "Service Category Not Found";
+        return serviceCategory;
+      },
+    },
+
+    {
+      title: "Contact NO",
+      dataIndex: "user.contactNo",
+      render: function (data: any, record: any) {
+        const serviceCategory =
+          record.user?.contactNo || "User conact  Not Found";
+        return serviceCategory;
+      },
+    },
+
+    {
+      title: "Email",
+      dataIndex: "user.email",
+      render: function (data: any, record: any) {
+        const serviceCategory = record.user?.email || "user email Not Found";
+        return serviceCategory;
+      },
     },
     {
       title: "Action",
@@ -95,17 +129,6 @@ const ManageBooking = () => {
       render: function (data: any) {
         return (
           <>
-            <Link href={`/admin/manage-service/edit/${data}`}>
-              <Button
-                style={{
-                  margin: "0px 5px",
-                  marginBottom: "3px",
-                }}
-                type="primary"
-              >
-                <EditOutlined />
-              </Button>
-            </Link>
             <Button
               onClick={() => deleteHandler(data)}
               type="primary"
@@ -145,7 +168,7 @@ const ManageBooking = () => {
           },
         ]}
       />
-      <ActionBar title="Manage  Service">
+      <ActionBar title="Manage Booking">
         <Input
           size="large"
           placeholder="Search"
@@ -156,12 +179,6 @@ const ManageBooking = () => {
           }}
         />
         <div>
-          <Link href="/admin/add-service">
-            <Button type="primary" style={{ marginRight: "2rem" }}>
-              Create
-            </Button>
-          </Link>
-
           {(!!sortBy || !!sortOrder || !!searchTerm) && (
             <Button
               style={{ margin: "0px 5px" }}
@@ -177,7 +194,7 @@ const ManageBooking = () => {
       <UMTable
         loading={isLoading}
         columns={columns}
-        dataSource={service}
+        dataSource={booking}
         pageSize={size}
         totalPages={meta?.total}
         showSizeChanger={true}

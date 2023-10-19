@@ -2,10 +2,16 @@
 
 import { Button, Card } from "antd";
 import Image from "next/image";
-import { Col, Divider, Row } from "antd";
+import img2 from "../../assets/R (2).jpg";
+import { Col, Row } from "antd";
 import img1 from "../../assets/arrangement9.png";
+import { useGetServiceQuery } from "@/redux/api/serviceApi";
+import Link from "next/link";
 const { Meta } = Card;
 export default function Service() {
+  const query: Record<string, any> = {};
+  const { data, isLoading } = useGetServiceQuery({ ...query });
+
   const contentStyle: React.CSSProperties = {
     color: "black",
     textAlign: "center",
@@ -29,78 +35,30 @@ export default function Service() {
       <h2 style={contentStyle}>Available Service</h2>
 
       <Row style={rowStyle}>
-        <Col span={6}>
-          <Card
-            hoverable
-            style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+        {data?.service.map((service, index) => (
+          <Col span={6} key={index}>
+            <Card
+              hoverable
+              style={{ width: 250 }}
+              cover={
+                <Image alt="example" src={img2} height={180} width={250} />
+              }
+            >
+              <Meta
+                title={service?.name}
+                description={service?.description.slice(0, 50)}
               />
-            }
-          >
-            {" "}
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-            <Button type="primary" style={{ marginTop: "8px" }}>
-              Book Now
-            </Button>
-          </Card>
-        </Col>
-
-        <Col span={6}>
-          <Card
-            hoverable
-            style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-
-            <Button type="primary" style={{ marginTop: "8px" }}>
-              Book Now
-            </Button>
-          </Card>
-        </Col>
-        <Col span={6}>
-          <Card
-            hoverable
-            style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-            <Button type="primary" style={{ marginTop: "8px" }}>
-              Book Now
-            </Button>
-          </Card>
-        </Col>
-
-        <Col span={6}>
-          <Card
-            hoverable
-            style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-            <Button type="primary" style={{ marginTop: "8px" }}>
-              Book Now
-            </Button>
-          </Card>
-        </Col>
+              <p style={{ fontWeight: "bold", color: "blue" }}>
+                Price:{service?.price} BDT
+              </p>
+              <Link href={`/seeDetails/${service?.id}`}>
+                <Button type="primary" style={{ marginTop: "8px" }}>
+                  See Details
+                </Button>
+              </Link>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </div>
   );

@@ -5,8 +5,8 @@ import UpComingService from "@/components/UpComingService/UpComing";
 import Review from "@/components/Review/Review";
 import Category from "@/components/Category/Category";
 import News from "@/components/LatestNews/News";
-
-export default function Home() {
+import dynamic from "next/dynamic";
+function Home() {
   return (
     <HomePageLayout>
       <CarouselPage />
@@ -18,3 +18,4 @@ export default function Home() {
     </HomePageLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Home), { ssr: false });

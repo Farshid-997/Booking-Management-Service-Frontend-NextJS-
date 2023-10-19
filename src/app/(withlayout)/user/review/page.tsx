@@ -1,5 +1,5 @@
 "use client";
-import {  SubmitHandler } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { Button, Col, Row, message } from "antd";
 
 import Form from "@/components/Forms/Form";
@@ -9,12 +9,8 @@ import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { useCreateServiceMutation } from "@/redux/api/serviceApi";
 
 type FormValues = {
-  name: string;
-  description: string;
-  location: string;
-  price: number;
-  category: string;
-  availability: boolean;
+  rating: string;
+  text: string;
 };
 
 export default function AddService() {
@@ -55,13 +51,10 @@ export default function AddService() {
             label: `${role}`,
             link: `/${role}`,
           },
+
           {
-            label: "manage-service",
-            link: `/${role}/manage-service`,
-          },
-          {
-            label: "admin",
-            link: `/${role}/admin`,
+            label: "service",
+            link: `/${role}/service`,
           },
         ]}
       />

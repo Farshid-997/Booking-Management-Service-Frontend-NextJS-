@@ -1,7 +1,7 @@
 "use client";
 
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import Link from "next/link";
 import {
   DeleteOutlined,
@@ -15,7 +15,7 @@ import UMTable from "@/components/ui/Table";
 
 import ActionBar from "@/components/ui/ActionBar/ActionBar";
 import dayjs from "dayjs";
-import { useGetUserQuery } from "@/redux/api/userApi";
+import { useDeleteUserMutation, useGetUserQuery } from "@/redux/api/userApi";
 import { getUserInfo } from "@/service/auth.service";
 
 const ManageUser = () => {
@@ -26,7 +26,7 @@ const ManageUser = () => {
   const [sortBy, setSortBy] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-
+  const [deleteUser] = useDeleteUserMutation();
   query["limit"] = size;
   query["page"] = page;
   query["sortBy"] = sortBy;
@@ -46,7 +46,14 @@ const ManageUser = () => {
 
   const user = data?.user;
   const meta = data?.meta;
-
+  const deleteHandler = async (id: string) => {
+    try {
+      await deleteUser(id);
+      message.success("User Deleted successfully!");
+    } catch (err: any) {
+      console.log(err.message);
+    }
+  };
   const columns = [
     {
       title: "Id",
@@ -106,7 +113,7 @@ const ManageUser = () => {
               </Button>
             </Link>
             <Button
-              onClick={() => console.log(data)}
+              onClick={() => deleteHandler(data)}
               type="primary"
               danger
               style={{ marginLeft: "4px" }}

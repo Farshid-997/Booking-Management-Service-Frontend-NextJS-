@@ -21,7 +21,7 @@ export const bookingApi = baseApi.injectEndpoints({
       }),
       transformResponse: (response: IBooking[], meta: IMeta) => {
         return {
-          service: response,
+          booking: response,
           meta,
         };
       },

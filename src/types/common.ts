@@ -38,8 +38,18 @@ export interface IUser {
   address: string;
   profileImg: string;
 }
+
 export interface IBooking {
   id: any;
   date: string;
   status: string;
+  user?: IUser;
+  service?: IService;
+}
+export interface IReview {
+  id: any;
+  rating: string;
+  text: string;
+  userId?: string;
+  serviceId?: string;
 }

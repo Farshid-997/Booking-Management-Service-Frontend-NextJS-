@@ -1,35 +1,18 @@
 "use client";
-import { Col, Layout, Menu, Row } from "antd";
+import { Col, Layout, Row } from "antd";
 import Image from "next/image";
-import Link from "next/link";
+
 import img1 from "../../assets/flower-shape1.svg";
 import {
-  MenuOutlined,
-  PhoneOutlined,
-  DashboardOutlined,
-  LoginOutlined,
   FacebookOutlined,
   InstagramOutlined,
   TwitterOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons"; // Import icons
-import logo from "../../assets/MainLogo.png";
+} from "@ant-design/icons";
+import HeaderPage from "@/components/ui/Header/HeaderPage";
 
-import { authKey } from "@/constants/storageKey";
-import { removeUserInfo } from "@/service/auth.service";
-import { useRouter } from "next/navigation";
-
-const { Header, Content, Footer } = Layout;
-const { SubMenu } = Menu;
+const { Content, Footer } = Layout;
 
 const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
-  const headerStyle = {
-    backgroundColor: "white",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-  };
-
   const footerStyle = {
     backgroundColor: "#9AA497",
     marginTop: "5rem",
@@ -51,51 +34,10 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
     color: "purple",
     height: "20px",
   };
-  const router = useRouter();
-  const logout = () => {
-    removeUserInfo(authKey);
-    router.push("/login");
-  };
+
   return (
     <Layout className="layout">
-      <Header style={headerStyle}>
-        <div className="demo-logo">
-          <Link href="/">
-            <Image
-              src={logo}
-              alt="Logo"
-              width={60}
-              height={60}
-              style={{ marginTop: "18px" }}
-            />
-          </Link>
-        </div>
-        <Menu
-          style={{
-            backgroundColor: "white",
-          }}
-          mode="horizontal"
-        >
-          <ShoppingCartOutlined />
-
-          <Menu.Item key="home" icon={<LoginOutlined />}>
-            <Link href="/login">Login</Link>
-          </Menu.Item>
-
-          {/* <Menu.Item key="home" icon={<LoginOutlined />}>
-            <Link href="/login">Login</Link>
-          </Menu.Item> */}
-
-          <SubMenu key="more" icon={<MenuOutlined />} title="More">
-            <Menu.Item key="dashboard" icon={<DashboardOutlined />}>
-              <Link href="/user">Dashboard</Link>
-            </Menu.Item>
-            <Menu.Item key="contact" icon={<PhoneOutlined />}>
-              <Link href="/contact">Contact Us</Link>
-            </Menu.Item>
-          </SubMenu>
-        </Menu>
-      </Header>
+      <HeaderPage />
       <Content style={{ height: "auto" }}>{children}</Content>
       <Footer style={footerStyle}>
         <Row gutter={20}>

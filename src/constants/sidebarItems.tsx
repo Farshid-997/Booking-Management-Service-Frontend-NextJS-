@@ -1,13 +1,13 @@
-import type { MenuProps } from "antd";
+import { Avatar, type MenuProps } from "antd";
 import {
   ProfileOutlined,
   TableOutlined,
   AppstoreOutlined,
-  UserOutlined,
   FolderAddOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import { USER_ROLE } from "./role";
+
 export const sidebarItems = (role: string) => {
   const defaultSidebarItems: MenuProps["items"] = [
     {
@@ -27,17 +27,8 @@ export const sidebarItems = (role: string) => {
     },
   ];
 
-  const commonAdminSidebarItems: MenuProps["items"] = [
-    // {
-    //   label: <Link href={`/${role}/manage-user`}>Manage Users</Link>,
-    //   icon: <TableOutlined />,
-    //   key: `/${role}/manage-user`,
-    // },
-  ];
-
   const adminSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
-    ...commonAdminSidebarItems,
 
     {
       label: "Manage User",
@@ -90,7 +81,7 @@ export const sidebarItems = (role: string) => {
 
   const superAdminSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
-    ...commonAdminSidebarItems,
+
     {
       label: <Link href={`/${role}/admin`}>Manage Admin</Link>,
       icon: <TableOutlined />,
@@ -118,16 +109,17 @@ export const sidebarItems = (role: string) => {
 
   const userSidebarItems: MenuProps["items"] = [
     ...defaultSidebarItems,
-    // {
-    //   label: <Link href={`/${role}/profile`}>My Profile</Link>,
-    //   icon: <TableOutlined />,
-    //   key: `/${role}/profile`,
-    // },
 
     {
       label: <Link href={`/${role}/service`}>My Services</Link>,
       icon: <TableOutlined />,
       key: `/${role}/service`,
+    },
+
+    {
+      label: <Link href={`/${role}/review`}>Service Review</Link>,
+      icon: <TableOutlined />,
+      key: `/${role}/review`,
     },
   ];
 
