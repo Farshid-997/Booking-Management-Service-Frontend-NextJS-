@@ -35,7 +35,7 @@ export default function Service() {
       <h2 style={contentStyle}>Available Service</h2>
 
       <Row style={rowStyle}>
-        {data?.service.map((service, index) => (
+        {data?.service?.map((service, index) => (
           <Col span={6} key={index}>
             <Card
               hoverable
