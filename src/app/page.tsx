@@ -6,6 +6,7 @@ import Review from "@/components/Review/Review";
 import Category from "@/components/Category/Category";
 import News from "@/components/LatestNews/News";
 import dynamic from "next/dynamic";
+import Contact from "@/components/Contact/Contact";
 function Home() {
   return (
     <HomePageLayout>
@@ -15,6 +16,7 @@ function Home() {
       <Review />
       <Category></Category>
       <News></News>
+      <Contact></Contact>
     </HomePageLayout>
   );
 }

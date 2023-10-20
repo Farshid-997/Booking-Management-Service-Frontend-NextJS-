@@ -88,23 +88,17 @@ export const sidebarItems = (role: string) => {
       key: `/${role}/admin`,
     },
 
-    {
-      label: <Link href={`/${role}/user`}>Manage User</Link>,
-      icon: <TableOutlined />,
-      key: `/${role}/user`,
-    },
-
-    {
-      label: "Manage permission",
-      key: "manage-permission",
-      icon: <AppstoreOutlined />,
-      children: [
-        {
-          label: <Link href={`/${role}/permission`}>View permissions</Link>,
-          key: `/${role}/permission`,
-        },
-      ],
-    },
+    // {
+    //   label: "Manage permission",
+    //   key: "manage-permission",
+    //   icon: <AppstoreOutlined />,
+    //   children: [
+    //     {
+    //       label: <Link href={`/${role}/permission`}>View permissions</Link>,
+    //       key: `/${role}/permission`,
+    //     },
+    //   ],
+    // },
   ];
 
   const userSidebarItems: MenuProps["items"] = [

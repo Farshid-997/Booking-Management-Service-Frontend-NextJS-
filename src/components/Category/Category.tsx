@@ -5,7 +5,12 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card, Col, Row } from "antd";
+import img1 from "../../assets/arrangement9.png";
+import img2 from "../../assets/img-1.jpg";
+import img3 from "../../assets/dusk12.png";
+import img4 from "../../assets/img-3.jpg";
 
+import Image from "next/image";
 const { Meta } = Card;
 export default function Category() {
   const reviewStyle1: React.CSSProperties = {
@@ -43,24 +48,14 @@ export default function Category() {
               <Card
                 hoverable
                 style={{ width: 300 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                  />
-                }
-                actions={[
-                  <SettingOutlined key="setting" />,
-                  <EditOutlined key="edit" />,
-                  <EllipsisOutlined key="ellipsis" />,
-                ]}
+                cover={<Image alt="example" src={img1} />}
               >
                 <Meta
                   avatar={
                     <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
                   }
-                  title="Card title"
-                  description="This is the description"
+                  title="Service Cartegory"
+                  description="This new edition of our service category"
                 />
               </Card>
             </Col>
@@ -69,24 +64,14 @@ export default function Category() {
               <Card
                 hoverable
                 style={{ width: 300 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                  />
-                }
-                actions={[
-                  <SettingOutlined key="setting" />,
-                  <EditOutlined key="edit" />,
-                  <EllipsisOutlined key="ellipsis" />,
-                ]}
+                cover={<Image alt="example" src={img4} width={170} />}
               >
                 <Meta
                   avatar={
                     <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
                   }
-                  title="Card title"
-                  description="This is the description"
+                  title="Service Cartegory"
+                  description="Todays launching"
                 />
               </Card>
             </Col>
@@ -94,24 +79,14 @@ export default function Category() {
               <Card
                 hoverable
                 style={{ width: 300 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                  />
-                }
-                actions={[
-                  <SettingOutlined key="setting" />,
-                  <EditOutlined key="edit" />,
-                  <EllipsisOutlined key="ellipsis" />,
-                ]}
+                cover={<Image alt="example" src={img2} width={170} />}
               >
                 <Meta
                   avatar={
                     <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
                   }
-                  title="Card title"
-                  description="This is the description"
+                  title="Service Cartegory"
+                  description="Today's launching"
                 />
               </Card>
             </Col>
@@ -120,24 +95,14 @@ export default function Category() {
               <Card
                 hoverable
                 style={{ width: 300 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                  />
-                }
-                actions={[
-                  <SettingOutlined key="setting" />,
-                  <EditOutlined key="edit" />,
-                  <EllipsisOutlined key="ellipsis" />,
-                ]}
+                cover={<Image alt="example" src={img3} width={250} />}
               >
                 <Meta
                   avatar={
                     <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
                   }
-                  title="Card title"
-                  description="This is the description"
+                  title="Service Cartegory"
+                  description="Best Seller"
                 />
               </Card>
             </Col>

@@ -8,7 +8,7 @@ import {
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import logo from "../../../assets/flower-shape1.svg";
+import logo from "../../../assets/shape.png";
 import Image from "next/image";
 import { Avatar, Layout, Menu } from "antd";
 import Link from "next/link";
@@ -54,11 +54,11 @@ export default function HeaderPage() {
           }}
           mode="horizontal"
         >
-          <ShoppingCartOutlined
+          {/* <ShoppingCartOutlined
             style={{ cursor: "pointer" }}
             twoToneColor="#eb2f96"
             height={50}
-          />
+          /> */}
 
           {isLoggedIn() ? (
             <Avatar

@@ -1,29 +1,31 @@
 "use client";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler } from "react-hook-form";
 import { Button, Col, Row, message } from "antd";
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { getUserInfo } from "@/service/auth.service";
-import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useCreateServiceMutation } from "@/redux/api/serviceApi";
+
+import { useCreateReviewMutation } from "@/redux/api/reviewApi";
 
 type FormValues = {
   rating: string;
   text: string;
+  userId: string;
+  serviceId: string;
 };
 
-export default function AddService() {
+export default function AddReview() {
   const { role } = getUserInfo() as any;
 
-  const [createService] = useCreateServiceMutation();
+  const [createReview] = useCreateReviewMutation();
 
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
-      const res = await createService({ ...data }).unwrap();
+      const res = await createReview({ ...data }).unwrap();
 
       if (res) {
-        message.success("Service Created successfully!");
+        message.success("Review Added successfully!");
       }
     } catch (err: any) {
       console.log(err.message);
@@ -45,21 +47,8 @@ export default function AddService() {
   return (
     <>
       {" "}
-      <UMBreadCrumb
-        items={[
-          {
-            label: `${role}`,
-            link: `/${role}`,
-          },
-
-          {
-            label: "service",
-            link: `/${role}/service`,
-          },
-        ]}
-      />
       <div style={maindiv}>
-        <h2 style={style}>Add Services</h2>
+        <h2 style={style}>Add Review</h2>
 
         <Form submitHandler={onSubmit}>
           <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={formDiv}>
@@ -68,7 +57,20 @@ export default function AddService() {
               span={8}
               style={{ marginBottom: "10px" }}
             >
-              <FormInput type="text" name="name" size="large" label="name" />
+              <FormInput
+                type="text"
+                name="rating"
+                size="large"
+                label="rating"
+              />
+            </Col>
+
+            <Col
+              className="gutter-row"
+              span={8}
+              style={{ marginBottom: "10px" }}
+            >
+              <FormInput type="text" name="text" size="large" label="text" />
             </Col>
 
             <Col
@@ -78,35 +80,9 @@ export default function AddService() {
             >
               <FormInput
                 type="text"
-                name="description"
+                name="userId"
                 size="large"
-                label="description"
-              />
-            </Col>
-
-            <Col
-              className="gutter-row"
-              span={8}
-              style={{ marginBottom: "10px" }}
-            >
-              <FormInput
-                type="number"
-                name="price"
-                size="large"
-                label="price"
-              />
-            </Col>
-
-            <Col
-              className="gutter-row"
-              span={8}
-              style={{ marginBottom: "10px" }}
-            >
-              <FormInput
-                type="text"
-                name="location"
-                size="large"
-                label="location"
+                label="userId"
               />
             </Col>
 
@@ -117,22 +93,9 @@ export default function AddService() {
             >
               <FormInput
                 type="text"
-                name="category"
+                name="serviceId"
                 size="large"
-                label="category"
-              />
-            </Col>
-
-            <Col
-              className="gutter-row"
-              span={8}
-              style={{ marginBottom: "10px" }}
-            >
-              <FormInput
-                type="text"
-                name="availability"
-                size="large"
-                label="availability"
+                label="serviceId"
               />
             </Col>
           </Row>
@@ -142,7 +105,7 @@ export default function AddService() {
             style={{ marginLeft: "25px", marginBottom: "8px" }}
             size="large"
           >
-            Create
+            Add
           </Button>
         </Form>
       </div>

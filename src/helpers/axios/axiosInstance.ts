@@ -48,7 +48,7 @@ instance.interceptors.response.use(
       console.log("access from instance", token);
       return instance(config);
     }
-    console.log(error);
+    console.log("err", error);
     const responseObject: IGenericErrorResponse = {
       statusCode: error?.response?.data?.statusCode || 500,
       message: error?.response?.data?.message || "Something went wrong",

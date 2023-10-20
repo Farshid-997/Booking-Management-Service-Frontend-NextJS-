@@ -2,6 +2,7 @@
 import { Col, Divider, Row, Card } from "antd";
 import Image from "next/image";
 import img1 from "../../assets/dusk12.png";
+import img2 from "../../assets/shape.png";
 const { Meta } = Card;
 export default function Review() {
   const reviewStyle: React.CSSProperties = {
@@ -43,17 +44,12 @@ export default function Review() {
             <Card
               hoverable
               style={{ width: 200 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-              }
+              cover={<Image alt="example" src={img2} width={200} />}
             >
               {" "}
               <Meta
-                title="Europe Street beat"
-                description="www.instagram.com"
+                title="5 star rating of weeding planer service"
+                description="good service"
               />
             </Card>
           </Col>
@@ -62,16 +58,11 @@ export default function Review() {
             <Card
               hoverable
               style={{ width: 200 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-              }
+              cover={<Image alt="example" src={img2} width={200} />}
             >
               <Meta
-                title="Europe Street beat"
-                description="www.instagram.com"
+                title="3.8 star rating of weeding planer service"
+                description="bad service"
               />
             </Card>
           </Col>
@@ -79,16 +70,11 @@ export default function Review() {
             <Card
               hoverable
               style={{ width: 200 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-              }
+              cover={<Image alt="example" src={img2} width={200} />}
             >
               <Meta
-                title="Europe Street beat"
-                description="www.instagram.com"
+                title="4.0 star rating of weeding planer service"
+                description="moderate service"
               />
             </Card>
           </Col>
@@ -97,16 +83,11 @@ export default function Review() {
             <Card
               hoverable
               style={{ width: 200 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-              }
+              cover={<Image alt="example" src={img2} width={200} />}
             >
               <Meta
-                title="Europe Street beat"
-                description="www.instagram.com"
+                title="4.5 star rating of weeding planer service"
+                description="good service"
               />
             </Card>
           </Col>
