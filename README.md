@@ -37,3 +37,18 @@
 # Live Link
 
 - https://booking-service-management-farshid-997.vercel.app/
+
+# Admin email and password
+
+1. email- ahmed2@example.com
+   password- f123
+
+# user email and password
+
+1. email - ahmed@example.com
+   password-f123
+
+# superadmin
+
+1. email -anik314@example.com
+   password-f123
