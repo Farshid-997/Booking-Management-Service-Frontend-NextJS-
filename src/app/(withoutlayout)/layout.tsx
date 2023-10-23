@@ -39,6 +39,7 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
     <Layout className="layout">
       <HeaderPage />
       <Content style={{ height: "auto" }}>{children}</Content>
+
       <Footer style={footerStyle}>
         <Row gutter={20}>
           <Col>
