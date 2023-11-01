@@ -7,17 +7,19 @@ import { Col, Row } from "antd";
 import img1 from "../../assets/arrangement9.png";
 import { useGetServiceQuery } from "@/redux/api/serviceApi";
 import Link from "next/link";
+
 const { Meta } = Card;
+
 export default function Service() {
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetServiceQuery({ ...query });
 
-  const contentStyle: React.CSSProperties = {
-    color: "black",
-    textAlign: "center",
-    marginTop: "1rem",
-    fontSize: "50px",
-  };
+  // const contentStyle: React.CSSProperties = {
+  //   color: "black",
+  //   textAlign: "center",
+  //   marginTop: "1rem",
+  //   fontSize: "50px",
+  // };
 
   const rowStyle = {
     marginTop: "4rem",
@@ -32,11 +34,11 @@ export default function Service() {
         alt=""
         style={{ marginLeft: "48rem", marginTop: "3rem" }}
       ></Image>
-      <h2 style={contentStyle}>Available Service</h2>
+      <h2 className="content">Available Service</h2>
 
       <Row style={rowStyle}>
         {data?.service?.map((service, index) => (
-          <Col span={6} key={index}>
+          <Col xs={2} sm={4} md={6} lg={8} xl={6} key={index}>
             <Card
               hoverable
               style={{ width: 250 }}
