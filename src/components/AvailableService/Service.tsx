@@ -3,6 +3,7 @@
 import { Button, Card } from "antd";
 import Image from "next/image";
 import img2 from "../../assets/R (2).jpg";
+
 import { Col, Row } from "antd";
 import img1 from "../../assets/arrangement9.png";
 import { useGetServiceQuery } from "@/redux/api/serviceApi";

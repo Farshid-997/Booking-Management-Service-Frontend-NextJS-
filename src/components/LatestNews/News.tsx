@@ -5,21 +5,9 @@ import img1 from "../../assets/img-1.jpg";
 import img2 from "../../assets/img-2.jpg";
 import img3 from "../../assets/img-3.jpg";
 import { useState } from "react";
+import styles from "./styles.module.css";
 const { Meta } = Card;
 export default function News() {
-  const contentStyle1: React.CSSProperties = {
-    color: "black",
-    textAlign: "center",
-    marginTop: "6rem",
-    fontSize: "50px",
-    marginBottom: "4rem",
-  };
-  const rowStyle = {
-    marginTop: "1rem",
-    paddingLeft: "25rem",
-    paddingRight: "5rem",
-  };
-
   const [isHovered, setIsHovered] = useState(false);
 
   const imageStyle = {
@@ -29,21 +17,24 @@ export default function News() {
 
   return (
     <div>
-      <h1 style={contentStyle1}>Our Latest Wedding News!</h1>
+      <h1 className={styles.newsHeader}>Our Latest Wedding News</h1>
 
-      <Row style={rowStyle}>
-        <Col span={6}>
+      <Row className={styles.rowNewsStyle} gutter={[16, 16]}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 300 }}
-            cover={<Image alt="example" src={img1} />}
+            cover={<Image alt="example" src={img1} width={210} />}
           >
             {" "}
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta
+              title="By Aliana de 21 Sep 2023"
+              description="Make sure your wedding gown is the best one."
+            />
           </Card>
         </Col>
 
-        <Col span={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 300 }}
@@ -54,19 +45,27 @@ export default function News() {
                 style={imageStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                width={250}
               />
             }
           >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta
+              title="By David Luis 23 Sep 2023"
+              description="You must need a great photographer."
+            />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 300 }}
-            cover={<Image alt="example" src={img3} />}
+            cover={<Image alt="example" src={img3} width={210} />}
           >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            {" "}
+            <Meta
+              title="By Robertson Doe 25 Sep 2023"
+              description="Top 10 wedding bouquet arranging idea"
+            />
           </Card>
         </Col>
       </Row>

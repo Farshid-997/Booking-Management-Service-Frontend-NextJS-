@@ -4,6 +4,7 @@ import Image from "next/image";
 import img1 from "../../assets/dusk12.png";
 import img2 from "../../assets/shape.png";
 import styles from "./styles.module.css";
+import { StarOutlined } from "@ant-design/icons";
 const { Meta } = Card;
 export default function Review() {
   return (
@@ -17,13 +18,22 @@ export default function Review() {
             <Card
               hoverable
               style={{ width: 200 }}
-              cover={<Image alt="example" src={img2} width={200} />}
+              cover={
+                <Image
+                  alt="example"
+                  src={img2}
+                  width={200}
+                  style={{ borderRadius: "50px" }}
+                />
+              }
             >
               {" "}
-              <Meta
-                title="5 star rating of weeding planer service"
-                description="good service"
-              />
+              <Meta description="good service" />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
             </Card>
           </Col>
 
@@ -33,10 +43,11 @@ export default function Review() {
               style={{ width: 200 }}
               cover={<Image alt="example" src={img2} width={200} />}
             >
-              <Meta
-                title="3.8 star rating of weeding planer service"
-                description="bad service"
-              />
+              <Meta description="bad service" />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
             </Card>
           </Col>
           <Col xs={24} sm={12} md={6}>
@@ -45,10 +56,11 @@ export default function Review() {
               style={{ width: 200 }}
               cover={<Image alt="example" src={img2} width={200} />}
             >
-              <Meta
-                title="4.0 star rating of weeding planer service"
-                description="moderate service"
-              />
+              <Meta description="moderate service" />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
             </Card>
           </Col>
 
@@ -58,10 +70,11 @@ export default function Review() {
               style={{ width: 200 }}
               cover={<Image alt="example" src={img2} width={200} />}
             >
-              <Meta
-                title="4.5 star rating of weeding planer service"
-                description="good service"
-              />
+              <Meta description="good service" />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
+              <StarOutlined className={styles.icon} />
             </Card>
           </Col>
         </Row>

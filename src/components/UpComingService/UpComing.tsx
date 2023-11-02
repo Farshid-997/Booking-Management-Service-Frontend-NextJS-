@@ -1,5 +1,8 @@
 "use client";
-
+import img1 from "../../assets/5.png";
+import img2 from "../../assets/img-2.jpg";
+import img3 from "../../assets/hero-20.jpg";
+import img4 from "../../assets/4.jpg";
 import { Card } from "antd";
 import Image from "next/image";
 import { Col, Divider, Row } from "antd";
@@ -10,20 +13,15 @@ export default function UpComingService() {
     <div>
       <h2 className={styles.contentHeaderStyle}>UP Coming Service</h2>
 
-      <Row className={styles.contentRowStyle} gutter={[16, 16]}>
+      <Row className={styles.contentRowStyle} gutter={[8, 8]}>
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={<Image alt="example" src={img1} width={150} />}
           >
             {" "}
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta description="Wedding Art" />
           </Card>
         </Col>
 
@@ -31,28 +29,18 @@ export default function UpComingService() {
           <Card
             hoverable
             style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={<Image alt="example" src={img2} width={200} />}
           >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta description="Wedding Accessories" />
           </Card>
         </Col>
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={<Image alt="example" src={img3} width={140} />}
           >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta description="Wedding Design Cake" />
           </Card>
         </Col>
 
@@ -60,14 +48,9 @@ export default function UpComingService() {
           <Card
             hoverable
             style={{ width: 200 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={<Image alt="example" src={img4} width={150} />}
           >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
+            <Meta description="Wedding Ornaments" />
           </Card>
         </Col>
       </Row>
