@@ -7,38 +7,25 @@ import { Col, Row } from "antd";
 import img1 from "../../assets/arrangement9.png";
 import { useGetServiceQuery } from "@/redux/api/serviceApi";
 import Link from "next/link";
-
+import styles from "./styles.module.css";
 const { Meta } = Card;
 
 export default function Service() {
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetServiceQuery({ ...query });
 
-  // const contentStyle: React.CSSProperties = {
-  //   color: "black",
-  //   textAlign: "center",
-  //   marginTop: "1rem",
-  //   fontSize: "50px",
-  // };
-
-  const rowStyle = {
-    marginTop: "4rem",
-    paddingLeft: "15rem",
-    paddingRight: "5rem",
-    marginBottom: "4rem",
-  };
   return (
     <div>
       <Image
         src={img1}
-        alt=""
-        style={{ marginLeft: "48rem", marginTop: "3rem" }}
+        alt="service-header-image"
+        className={styles.serviceHeaderImage}
       ></Image>
-      <h2 className="content">Available Service</h2>
+      <h2 className={styles.contentHeader}>Available Service</h2>
 
-      <Row style={rowStyle}>
+      <Row className={styles.serviceRowStyle} gutter={[16, 16]}>
         {data?.service?.map((service, index) => (
-          <Col xs={2} sm={4} md={6} lg={8} xl={6} key={index}>
+          <Col xs={24} sm={12} md={6} key={index}>
             <Card
               hoverable
               style={{ width: 250 }}

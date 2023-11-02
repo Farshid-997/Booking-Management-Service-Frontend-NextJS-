@@ -3,44 +3,17 @@ import { Col, Divider, Row, Card } from "antd";
 import Image from "next/image";
 import img1 from "../../assets/dusk12.png";
 import img2 from "../../assets/shape.png";
+import styles from "./styles.module.css";
 const { Meta } = Card;
 export default function Review() {
-  const reviewStyle: React.CSSProperties = {
-    width: "100%",
-    height: "400px",
-    border: "1px solid gray",
-    backgroundColor: "gray",
-    borderRadius: "10px",
-    marginBottom: "2rem",
-  };
-  const mainDiv = {
-    paddingLeft: "5rem",
-    paddingRight: "5rem",
-  };
-
-  const contentStyle: React.CSSProperties = {
-    color: "black",
-    textAlign: "center",
-    marginTop: "1rem",
-    fontSize: "50px",
-    marginBottom: "4rem",
-  };
-  const rowStyle = {
-    marginTop: "1rem",
-    paddingLeft: "15rem",
-    paddingRight: "5rem",
-  };
   return (
-    <div style={mainDiv}>
-      <Image
-        src={img1}
-        alt=""
-        style={{ marginLeft: "48rem", marginTop: "3rem" }}
-      ></Image>
-      <h2 style={contentStyle}>User Review</h2>
-      <div style={reviewStyle}>
-        <Row style={rowStyle}>
-          <Col span={6}>
+    <div>
+      <Image src={img1} alt="" className={styles.reviewHeaderImage}></Image>
+      <h2 className={styles.reviewHeader}>User Review</h2>
+
+      <div>
+        <Row className={styles.reviewRowStyle} gutter={[8, 8]}>
+          <Col xs={24} sm={12} md={6}>
             <Card
               hoverable
               style={{ width: 200 }}
@@ -54,7 +27,7 @@ export default function Review() {
             </Card>
           </Col>
 
-          <Col span={6}>
+          <Col xs={24} sm={12} md={6}>
             <Card
               hoverable
               style={{ width: 200 }}
@@ -66,7 +39,7 @@ export default function Review() {
               />
             </Card>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} md={6}>
             <Card
               hoverable
               style={{ width: 200 }}
@@ -79,7 +52,7 @@ export default function Review() {
             </Card>
           </Col>
 
-          <Col span={6}>
+          <Col xs={24} sm={12} md={6}>
             <Card
               hoverable
               style={{ width: 200 }}

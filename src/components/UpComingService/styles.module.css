@@ -1,0 +1,25 @@
+.contentHeaderStyle {
+  color: black;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 50px;
+}
+.contentRowStyle {
+  margin-top: 4rem;
+  padding-left: 15rem;
+  padding-right: 5rem;
+  margin-bottom: 4rem;
+}
+@media only screen and (max-width: 765px) {
+  .contentHeaderStyle {
+    font-size: 25px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .contentRowStyle {
+    margin-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 5rem;
+    margin-bottom: 1rem;
+  }
+}

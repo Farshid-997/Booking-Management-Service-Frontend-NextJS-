@@ -3,27 +3,15 @@
 import { Card } from "antd";
 import Image from "next/image";
 import { Col, Divider, Row } from "antd";
+import styles from "./styles.module.css";
 const { Meta } = Card;
 export default function UpComingService() {
-  const contentStyle: React.CSSProperties = {
-    color: "black",
-    textAlign: "center",
-    marginTop: "4rem",
-    fontSize: "50px",
-  };
-
-  const rowStyle = {
-    marginTop: "4rem",
-    paddingLeft: "15rem",
-    paddingRight: "5rem",
-    marginBottom: "4rem",
-  };
   return (
     <div>
-      <h2 style={contentStyle}>UP Coming Service</h2>
+      <h2 className={styles.contentHeaderStyle}>UP Coming Service</h2>
 
-      <Row style={rowStyle}>
-        <Col span={6}>
+      <Row className={styles.contentRowStyle} gutter={[16, 16]}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}
@@ -39,7 +27,7 @@ export default function UpComingService() {
           </Card>
         </Col>
 
-        <Col span={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}
@@ -53,7 +41,7 @@ export default function UpComingService() {
             <Meta title="Europe Street beat" description="www.instagram.com" />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}
@@ -68,7 +56,7 @@ export default function UpComingService() {
           </Card>
         </Col>
 
-        <Col span={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
             style={{ width: 200 }}

@@ -1,0 +1,38 @@
+.contentHeader {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 1rem;
+}
+
+.serviceRowStyle {
+  margin-top: 4rem;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  margin-bottom: 4rem;
+}
+
+.serviceHeaderImage {
+  margin-left: 48rem;
+  margin-top: 3rem;
+}
+@media only screen and (max-width: 765px) {
+  .contentHeader {
+    font-size: 22px;
+    margin-top: 2rem;
+  }
+
+  .serviceRowStyle {
+    margin-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .serviceHeaderImage {
+    margin-left: 1rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}

@@ -2,12 +2,14 @@
 import { Col, Layout, Row } from "antd";
 import Image from "next/image";
 
+// import "../page.module.css";
 import img1 from "../../assets/flower-shape1.svg";
 import {
   FacebookOutlined,
   InstagramOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+
 import HeaderPage from "@/components/ui/Header/HeaderPage";
 
 const { Content, Footer } = Layout;
@@ -38,7 +40,7 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Layout className="layout">
       <HeaderPage />
-      <Content style={{ height: "auto" }}>{children}</Content>
+      <div className="new-content">{children}</div>
 
       <Footer style={footerStyle}>
         <Row gutter={20}>
