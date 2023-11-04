@@ -1,84 +1,45 @@
 "use client";
-import { Col, Divider, Row, Card } from "antd";
-import Image from "next/image";
-import img1 from "../../assets/dusk12.png";
-import img2 from "../../assets/shape.png";
+import { Col, Row, Avatar, Rate } from "antd";
+
 import styles from "./styles.module.css";
-import { StarOutlined } from "@ant-design/icons";
-const { Meta } = Card;
+
 export default function Review() {
   return (
-    <div>
-      <Image src={img1} alt="" className={styles.reviewHeaderImage}></Image>
+    <>
       <h2 className={styles.reviewHeader}>User Review</h2>
+      <section className="bg-white">
+        <div className="">
+          <Row gutter={[16, 16]} className={styles.reviewRowStyle}>
+            {[1, 2, 3].map((key) => (
+              <Col key={key} xs={24} md={8}>
+                <div className={styles.reviewCard}>
+                  <Row align="middle" justify="start" gutter={[16, 16]}>
+                    <Col>
+                      <Avatar
+                        src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                        size={56}
+                      />
+                    </Col>
+                    <Col>
+                      <div>
+                        <Rate allowHalf defaultValue={5} />
+                      </div>
+                      <p>Paul Starr</p>
+                    </Col>
+                  </Row>
 
-      <div>
-        <Row className={styles.reviewRowStyle} gutter={[8, 8]}>
-          <Col xs={24} sm={12} md={6}>
-            <Card
-              hoverable
-              style={{ width: 200 }}
-              cover={
-                <Image
-                  alt="example"
-                  src={img2}
-                  width={200}
-                  style={{ borderRadius: "50px" }}
-                />
-              }
-            >
-              {" "}
-              <Meta description="good service" />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-            </Card>
-          </Col>
-
-          <Col xs={24} sm={12} md={6}>
-            <Card
-              hoverable
-              style={{ width: 200 }}
-              cover={<Image alt="example" src={img2} width={200} />}
-            >
-              <Meta description="bad service" />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-            </Card>
-          </Col>
-          <Col xs={24} sm={12} md={6}>
-            <Card
-              hoverable
-              style={{ width: 200 }}
-              cover={<Image alt="example" src={img2} width={200} />}
-            >
-              <Meta description="moderate service" />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-            </Card>
-          </Col>
-
-          <Col xs={24} sm={12} md={6}>
-            <Card
-              hoverable
-              style={{ width: 200 }}
-              cover={<Image alt="example" src={img2} width={200} />}
-            >
-              <Meta description="good service" />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-              <StarOutlined className={styles.icon} />
-            </Card>
-          </Col>
-        </Row>
-      </div>
-    </div>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Culpa sit rerum incidunt, a consequuntur recusandae ab saepe
+                    illo est quia obcaecati neque quibusdam eius accusamus error
+                    officiis atque voluptates magnam!
+                  </p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </section>
+    </>
   );
 }

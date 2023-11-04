@@ -45,7 +45,7 @@ export default function News() {
                 style={imageStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                width={250}
+                width={230}
               />
             }
           >
@@ -59,7 +59,7 @@ export default function News() {
           <Card
             hoverable
             style={{ width: 300 }}
-            cover={<Image alt="example" src={img3} width={210} />}
+            cover={<Image alt="example" src={img3} width={200} />}
           >
             {" "}
             <Meta

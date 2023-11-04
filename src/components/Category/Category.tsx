@@ -5,6 +5,7 @@ import img1 from "../../assets/8.jpg";
 import img2 from "../../assets/3.jpg";
 import img3 from "../../assets/4.jpg";
 import img4 from "../../assets/img-3.jpg";
+import img5 from "../../assets/img-4.jpg";
 import styles from "./styles.module.css";
 import Image from "next/image";
 const { Meta } = Card;
@@ -12,6 +13,9 @@ export default function Category() {
   return (
     <>
       <h2 className={styles.categoryHeader}>Our Categories</h2>
+      <div className={styles.headerImages}>
+        <Image src={img5} alt="" className={styles.catImage}></Image>
+      </div>
 
       <Row className={styles.categoryRowStyle} gutter={[16, 16]}>
         <Col xs={24} sm={12} md={6}>

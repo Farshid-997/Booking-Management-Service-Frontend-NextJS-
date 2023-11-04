@@ -1,3 +1,87 @@
 .inviteDiv {
-  background-image: url("../.././assets/new\ One1.png");
+  background-image: url("../.././assets/5.png");
+  background-repeat: no-repeat;
+  padding: 12px;
+  border: 5px solid #a5aa9c;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-left: 1rem;
+  transition: transform 0.7s ease-in-out;
+}
+
+.inviteDiv:hover {
+  transform: scale(1.1);
+}
+.inviteDiv1 {
+  background-image: url("../.././assets/img-3.jpg");
+
+  padding: 12px;
+  border: 5px solid #a5aa9c;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-left: 1rem;
+  transition: transform 0.7s ease-in-out;
+}
+.inviteDiv1:hover {
+  transform: scale(1.1);
+}
+.inviteDiv2 {
+  background-image: url("../.././assets/9.jpg");
+
+  padding: 12px;
+  border: 5px solid #a5aa9c;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-left: 1rem;
+  transition: transform 0.7s ease-in-out;
+}
+.inviteDiv:hover {
+  transform: scale(1.1);
+}
+.rowComingStyles {
+  margin-top: 2rem;
+  padding-left: 25rem;
+  padding-right: 15rem;
+}
+.comingHeader {
+  color: black;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 50px;
+}
+.btnEvents {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  width: 180px;
+  padding: 10px;
+  border: none;
+  background-color: #a5aa9c;
+  color: white;
+  font-size: 20px;
+}
+.eventsPara {
+  font-size: 20px;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  line-height: 30px;
+}
+@media only screen and (max-width: 765px) {
+  .comingHeader {
+    font-size: 25px;
+    margin-top: 2rem;
+    margin-left: -4rem;
+    margin-bottom: 3rem;
+  }
+  .rowComingStyles {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 10rem;
+    margin-bottom: 1rem;
+  }
 }
