@@ -6,8 +6,8 @@ export default function Invite() {
   return (
     <>
       <h1 className={styles.comingHeader}>Our Coming Events</h1>
-      <Row gutter={[16, 16]} className={styles.rowComingStyles}>
-        <Col xs={24} sm={12} md={6}>
+      <Row gutter={[24, 24]} className={styles.rowComingStyles}>
+        <Col xs={24} sm={12} md={6} xl={8}>
           <div className={styles.inviteDiv}></div>
 
           <button className={styles.btnEvents}>The Reception</button>
@@ -18,7 +18,7 @@ export default function Invite() {
           </p>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={6} xl={8}>
           <div className={styles.inviteDiv1}></div>
 
           <button className={styles.btnEvents}>The Engagement</button>
@@ -29,7 +29,7 @@ export default function Invite() {
           </p>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={6} xl={8}>
           <div className={styles.inviteDiv2}></div>
 
           <button className={styles.btnEvents}>The Wedding</button>

@@ -24,7 +24,7 @@ export default function Service() {
       ></Image>
       <h2 className={styles.contentHeader}>Available Service</h2>
 
-      <Row className={styles.serviceRowStyle} gutter={[16, 16]}>
+      <Row className={styles.serviceRowStyle} gutter={[20, 40]}>
         {data?.service?.map((service, index) => (
           <Col xs={24} sm={12} md={6} key={index}>
             <Card

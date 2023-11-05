@@ -11,7 +11,7 @@ export default function Review() {
         <div className="">
           <Row gutter={[16, 16]} className={styles.reviewRowStyle}>
             {[1, 2, 3].map((key) => (
-              <Col key={key} xs={24} md={8}>
+              <Col key={key} xs={24} md={8} sm={12}>
                 <div className={styles.reviewCard}>
                   <Row align="middle" justify="start" gutter={[16, 16]}>
                     <Col>
@@ -28,7 +28,7 @@ export default function Review() {
                     </Col>
                   </Row>
 
-                  <p>
+                  <p className={styles.reviewPara}>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Culpa sit rerum incidunt, a consequuntur recusandae ab saepe
                     illo est quia obcaecati neque quibusdam eius accusamus error

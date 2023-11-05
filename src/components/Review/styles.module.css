@@ -25,8 +25,17 @@
   background-color: #f9faf8;
   border-radius: 30px;
   padding: 20px;
+  height: 40vh;
+}
+.reviewPara {
+  margin-top: 1.5rem;
+  font-size: 22px;
+  line-height: 33px;
 }
 @media only screen and (max-width: 765px) {
+  .reviewCard {
+    height: 55vh;
+  }
   .reviewHeader {
     font-size: 25px;
     margin-top: 2rem;
@@ -42,5 +51,11 @@
   .reviewHeaderImage {
     margin-left: 4rem;
     margin-top: 3rem;
+  }
+
+  .reviewPara {
+    margin-top: 1rem;
+    font-size: 15px;
+    line-height: 22.5px;
   }
 }

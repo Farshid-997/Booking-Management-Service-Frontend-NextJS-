@@ -17,7 +17,7 @@ export default function Category() {
         <Image src={img5} alt="" className={styles.catImage}></Image>
       </div>
 
-      <Row className={styles.categoryRowStyle} gutter={[16, 16]}>
+      <Row className={styles.categoryRowStyle} gutter={[24, 24]}>
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable

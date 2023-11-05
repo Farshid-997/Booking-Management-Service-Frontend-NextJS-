@@ -7,7 +7,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  margin-left: 1rem;
+  /* margin-right: 4rem; */
   transition: transform 0.7s ease-in-out;
 }
 
@@ -23,7 +23,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  margin-left: 1rem;
+  /* margin-right: 3rem; */
   transition: transform 0.7s ease-in-out;
 }
 .inviteDiv1:hover {
@@ -38,14 +38,14 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  margin-left: 1rem;
+  /* margin-right: 4rem; */
   transition: transform 0.7s ease-in-out;
 }
-.inviteDiv:hover {
+.inviteDiv2:hover {
   transform: scale(1.1);
 }
 .rowComingStyles {
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding-left: 25rem;
   padding-right: 15rem;
 }
@@ -57,8 +57,8 @@
 }
 .btnEvents {
   margin-top: 2rem;
-  margin-left: 4rem;
-  width: 180px;
+  margin-left: 3rem;
+  width: 250px;
   padding: 10px;
   border: none;
   background-color: #a5aa9c;
@@ -67,10 +67,11 @@
 }
 .eventsPara {
   font-size: 20px;
-  margin-left: 4rem;
+  margin-left: 3rem;
   margin-top: 1rem;
   line-height: 30px;
 }
+
 @media only screen and (max-width: 765px) {
   .comingHeader {
     font-size: 25px;

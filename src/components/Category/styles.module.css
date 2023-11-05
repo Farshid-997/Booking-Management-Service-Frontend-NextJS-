@@ -20,12 +20,8 @@
   padding-right: 5rem;
   width: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease-in-out;
 }
 
-.catImage:hover {
-  transform: scale(1.1); /* Scale the image on hover */
-}
 @media only screen and (max-width: 765px) {
   .categoryHeader {
     font-size: 25px;
