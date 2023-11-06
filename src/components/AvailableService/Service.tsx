@@ -34,17 +34,18 @@ export default function Service() {
                 <Image alt="example" src={img2} height={180} width={250} />
               }
             >
-              <Meta
-                title={service?.name}
-                description={service?.description.slice(0, 50)}
-              />
-              <p style={{ fontWeight: "bold", color: "blue" }}>
-                Price:{service?.price} BDT
+              <p className={styles.serviceTitle}>{service?.name}</p>
+              <p className={styles.serviceDesc}>
+                {service?.description.slice(0, 50)}
               </p>
+              <p className={styles.pricetext}>Price:{service?.price} BDT</p>
               <Link href={`/seeDetails/${service?.id}`}>
-                <Button type="primary" style={{ marginTop: "8px" }}>
+                <button
+                  className={styles.serviceBtn}
+                  style={{ marginTop: "8px" }}
+                >
                   See Details
-                </Button>
+                </button>
               </Link>
             </Card>
           </Col>

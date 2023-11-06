@@ -1,8 +1,9 @@
 .contentHeaderStyle {
   color: black;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 50px;
+  font-family: "Grandstander", cursive;
 }
 .contentRowStyle {
   margin-top: 4rem;

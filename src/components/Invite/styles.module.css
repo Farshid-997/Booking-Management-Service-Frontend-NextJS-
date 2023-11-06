@@ -52,8 +52,9 @@
 .comingHeader {
   color: black;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
   font-size: 50px;
+  font-family: "Grandstander", cursive;
 }
 .btnEvents {
   margin-top: 2rem;
@@ -64,12 +65,14 @@
   background-color: #a5aa9c;
   color: white;
   font-size: 20px;
+  font-family: "Grandstander", cursive;
 }
 .eventsPara {
   font-size: 20px;
   margin-left: 3rem;
   margin-top: 1rem;
   line-height: 30px;
+  font-family: "Grandstander", cursive;
 }
 
 @media only screen and (max-width: 765px) {

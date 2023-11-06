@@ -1,9 +1,10 @@
 .categoryHeader {
   color: black;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 50px;
   margin-bottom: 4rem;
+  font-family: "Grandstander", cursive;
 }
 .categoryRowStyle {
   margin-top: -5rem;
