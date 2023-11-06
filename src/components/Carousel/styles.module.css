@@ -1,0 +1,64 @@
+.para {
+  font-size: 40px;
+  margin-top: 16rem;
+  margin-left: 2rem;
+  line-height: 60px;
+  padding: 30px;
+}
+.para1 {
+  font-size: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 180px;
+  left: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #9aa497;
+  color: whitesmoke;
+  border: none;
+}
+.para1:hover {
+  background-color: #f4f8fc;
+  color: black;
+}
+.purchaseButton {
+  padding: 18px;
+  background-color: #9aa497;
+  border: none;
+  margin-left: 4rem;
+  width: 40vh;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 765px) {
+  .para {
+    font-size: 20px;
+    margin-top: 6rem;
+    margin-left: 0.5rem;
+    line-height: 30px;
+    padding: 30px;
+  }
+  .para1 {
+    font-size: 15px;
+
+    position: absolute;
+    top: 70px;
+    left: 40px;
+  }
+  .purchaseButton {
+    padding: 18px;
+
+    margin-left: 2rem;
+    width: 25vh;
+
+    font-size: 15px;
+  }
+  .heroImage {
+    width: 400px;
+    height: 400px;
+    margin-left: -2rem;
+    object-fit: contain;
+  }
+}
