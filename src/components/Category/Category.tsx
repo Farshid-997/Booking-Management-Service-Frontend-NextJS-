@@ -22,12 +22,9 @@ export default function Category() {
           <Card
             hoverable
             style={{ width: 250 }}
-            cover={<Image alt="example" src={img1} width={200} />}
+            cover={<Image alt="example" src={img1} width={200} height={200} />}
           >
-            <Meta
-              title="Wedding Cake"
-              description="This new edition of our service category"
-            />
+            <p className={styles.catPara}>Wedding Cake</p>
           </Card>
         </Col>
 
@@ -35,9 +32,9 @@ export default function Category() {
           <Card
             hoverable
             style={{ width: 250 }}
-            cover={<Image alt="example" src={img4} width={200} />}
+            cover={<Image alt="example" src={img4} width={200} height={200} />}
           >
-            <Meta title="Wedding Dress" description="Todays launching" />
+            <p className={styles.catPara}>Wedding Dress</p>
           </Card>
         </Col>
 
@@ -45,9 +42,9 @@ export default function Category() {
           <Card
             hoverable
             style={{ width: 250 }}
-            cover={<Image alt="example" src={img2} width={162} />}
+            cover={<Image alt="example" src={img2} width={162} height={200} />}
           >
-            <Meta title="wedding earrings" description="Today's launching" />
+            <p className={styles.catPara}>Wedding Earrings</p>
           </Card>
         </Col>
 
@@ -55,9 +52,9 @@ export default function Category() {
           <Card
             hoverable
             style={{ width: 250 }}
-            cover={<Image alt="example" src={img3} width={162} />}
+            cover={<Image alt="example" src={img3} width={162} height={200} />}
           >
-            <Meta title="Wedding Shoes" description="Best Seller" />
+            <p className={styles.catPara}>Wedding Shoes</p>
           </Card>
         </Col>
       </Row>

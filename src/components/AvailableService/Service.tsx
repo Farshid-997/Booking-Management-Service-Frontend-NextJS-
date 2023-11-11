@@ -9,6 +9,7 @@ import img1 from "../../assets/arrangement9.png";
 import { useGetServiceQuery } from "@/redux/api/serviceApi";
 import Link from "next/link";
 import styles from "./styles.module.css";
+import { BsFillCartCheckFill } from "react-icons/bs";
 const { Meta } = Card;
 
 export default function Service() {
@@ -29,24 +30,31 @@ export default function Service() {
           <Col xs={24} sm={12} md={6} key={index}>
             <Card
               hoverable
-              style={{ width: 250 }}
+              style={{ width: 250, height: 320 }}
               cover={
-                <Image alt="example" src={img2} height={180} width={250} />
+                <Image alt="example" src={img2} height={180} width={280} />
               }
             >
               <p className={styles.serviceTitle}>{service?.name}</p>
-              <p className={styles.serviceDesc}>
-                {service?.description.slice(0, 50)}
-              </p>
+
               <p className={styles.pricetext}>Price:{service?.price} BDT</p>
-              <Link href={`/seeDetails/${service?.id}`}>
-                <button
-                  className={styles.serviceBtn}
-                  style={{ marginTop: "8px" }}
-                >
-                  See Details
-                </button>
-              </Link>
+
+              <Row>
+                <Col xs={24} sm={12} md={6} key={index}>
+                  <Link href={`/seeDetails/${service?.id}`}>
+                    <button
+                      className={styles.serviceBtn}
+                      style={{ marginTop: "8px" }}
+                    >
+                      See Details
+                    </button>
+                  </Link>
+                </Col>
+
+                <Col xs={24} sm={12} md={6} key={index}>
+                  <BsFillCartCheckFill className={styles.cartIcon} />
+                </Col>
+              </Row>
             </Card>
           </Col>
         ))}

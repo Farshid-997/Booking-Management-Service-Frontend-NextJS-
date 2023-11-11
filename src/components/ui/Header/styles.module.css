@@ -1,0 +1,12 @@
+.headerCartIcon {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+}
+.headerStyle {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7vh;
+}

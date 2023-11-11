@@ -1,5 +1,5 @@
 .categoryHeader {
-  color: black;
+  color: #302e35;
   text-align: center;
   margin-top: 5rem;
   font-size: 50px;
@@ -22,7 +22,11 @@
   width: 100%;
   object-fit: cover;
 }
-
+.catPara {
+  font-family: "Grandstander", cursive;
+  font-weight: 600;
+  color: #1f1c3f;
+}
 @media only screen and (max-width: 765px) {
   .categoryHeader {
     font-size: 25px;

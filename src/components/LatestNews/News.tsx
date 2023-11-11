@@ -23,21 +23,21 @@ export default function News() {
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
-            style={{ width: 300 }}
-            cover={<Image alt="example" src={img1} width={210} />}
+            style={{ width: 250 }}
+            cover={<Image alt="example" src={img1} width={200} height={200} />}
           >
             {" "}
-            <Meta
-              title="By Aliana de 21 Sep 2023"
-              description="Make sure your wedding gown is the best one."
-            />
+            <p className={styles.newsPara}>By Aliana de 21 Sep 2023</p>
+            <p className={styles.newsPara1}>
+              Make sure your wedding gown is the best one.
+            </p>
           </Card>
         </Col>
 
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
-            style={{ width: 300 }}
+            style={{ width: 250 }}
             cover={
               <Image
                 alt="example"
@@ -45,27 +45,28 @@ export default function News() {
                 style={imageStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                width={230}
+                width={200}
+                height={200}
               />
             }
           >
-            <Meta
-              title="By David Luis 23 Sep 2023"
-              description="You must need a great photographer."
-            />
+            <p className={styles.newsPara}>By David Luis 23 Sep 2023</p>
+            <p className={styles.newsPara1}>
+              You must need a great photographer.
+            </p>
           </Card>
         </Col>
         <Col xs={24} sm={12} md={6}>
           <Card
             hoverable
-            style={{ width: 300 }}
-            cover={<Image alt="example" src={img3} width={200} />}
+            style={{ width: 250 }}
+            cover={<Image alt="example" src={img3} width={200} height={200} />}
           >
             {" "}
-            <Meta
-              title="By Robertson Doe 25 Sep 2023"
-              description="Top 10 wedding bouquet arranging idea"
-            />
+            <p className={styles.newsPara}>By Robertson Doe 25 Sep 2023</p>
+            <p className={styles.newsPara1}>
+              Top 10 wedding bouquet arranging idea
+            </p>
           </Card>
         </Col>
       </Row>

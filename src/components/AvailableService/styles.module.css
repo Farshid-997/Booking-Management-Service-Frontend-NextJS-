@@ -3,6 +3,7 @@
   font-size: 50px;
   margin-top: 5rem;
   font-family: "Grandstander", cursive;
+  color: #302e35;
 }
 
 .serviceRowStyle {
@@ -23,11 +24,11 @@
   color: white;
   width: 15vh;
   border-radius: 8px;
-  margin-top: 2rem;
+  margin-top: 1.3rem;
 }
 .pricetext {
-  font-size: 15px;
-  margin-top: 1rem;
+  font-size: 13px;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   /* font-weight: bold; */
   font-family: "Grandstander", cursive;
@@ -38,10 +39,18 @@
   font-family: "Grandstander", cursive;
 }
 .serviceTitle {
-  font-size: 18px;
-  margin-bottom: 1rem;
-  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: -1rem;
+  font-weight: 600;
   font-family: "Grandstander", cursive;
+  white-space: nowrap;
+}
+.cartIcon {
+  width: 25px;
+  height: 25px;
+  margin-top: 0.5rem;
+  margin-left: 8rem;
+  color: #a5aa9c;
 }
 @media only screen and (max-width: 765px) {
   .contentHeader {

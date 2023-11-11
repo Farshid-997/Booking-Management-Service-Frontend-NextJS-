@@ -1,5 +1,5 @@
 .contentHeaderStyle {
-  color: black;
+  color: #302e35;
   text-align: center;
   margin-top: 5rem;
   font-size: 50px;
@@ -14,6 +14,11 @@
 .cardImage {
   object-fit: cover;
   width: 100%;
+}
+.cardPara {
+  font-family: "Grandstander", cursive;
+  color: #1f1c3f;
+  font-weight: 600;
 }
 @media only screen and (max-width: 765px) {
   .contentHeaderStyle {

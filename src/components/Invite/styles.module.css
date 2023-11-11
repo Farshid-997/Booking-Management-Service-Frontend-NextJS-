@@ -50,7 +50,7 @@
   padding-right: 15rem;
 }
 .comingHeader {
-  color: black;
+  color: #302e35;
   text-align: center;
   margin-top: 5rem;
   font-size: 50px;
@@ -73,6 +73,7 @@
   margin-top: 1rem;
   line-height: 30px;
   font-family: "Grandstander", cursive;
+  color: #1f1c3f;
 }
 
 @media only screen and (max-width: 765px) {

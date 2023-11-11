@@ -28,7 +28,7 @@ export default function UpComingService() {
             }
           >
             {" "}
-            <Meta description="Wedding Art" />
+            <p className={styles.cardPara}> Wedding Art</p>
           </Card>
         </Col>
 
@@ -40,12 +40,12 @@ export default function UpComingService() {
               <Image
                 alt="example"
                 src={img2}
-                width={320}
+                width={327}
                 className={styles.cardImage}
               />
             }
           >
-            <Meta description="Wedding Accessories" />
+            <p className={styles.cardPara}> Wedding Accessories</p>
           </Card>
         </Col>
         <Col xs={24} sm={12} md={6}>
@@ -61,7 +61,7 @@ export default function UpComingService() {
               />
             }
           >
-            <Meta description="Wedding Design Cake" />
+            <p className={styles.cardPara}> Wedding Design Cake</p>
           </Card>
         </Col>
 
@@ -73,12 +73,12 @@ export default function UpComingService() {
               <Image
                 alt="example"
                 src={img4}
-                width={230}
+                width={238}
                 className={styles.cardImage}
               />
             }
           >
-            <Meta description="Wedding Ornaments" />
+            <p className={styles.cardPara}> Wedding Ornaments</p>
           </Card>
         </Col>
       </Row>

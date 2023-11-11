@@ -2,8 +2,12 @@
 import { Col, Row, Avatar, Rate } from "antd";
 
 import styles from "./styles.module.css";
+import { useGetReviewQuery } from "@/redux/api/reviewApi";
 
 export default function Review() {
+  const query: Record<string, any> = {};
+  const { data, isLoading } = useGetReviewQuery({ ...query });
+
   return (
     <>
       <h2 className={styles.reviewHeader}>User Review</h2>
