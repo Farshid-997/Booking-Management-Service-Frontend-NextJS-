@@ -3,8 +3,7 @@ import { Button, Card } from "antd";
 import HomePageLayout from "@/app/(withoutlayout)/layout";
 import { useGetSingleServiceQuery } from "@/redux/api/serviceApi";
 import { Col, Row } from "antd";
-import img2 from "../../../assets/R (2).jpg";
-import img1 from "../../../assets/dusk12.png";
+import img2 from "../../../assets/d.jpg";
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -40,28 +39,29 @@ function ServiceDetailsPage({ params }: IDProps) {
           }}
         >
           <Col sm={12} md={8} lg={8}>
-            <Card
+            {/* <Card
               hoverable
               style={{ width: 250, objectFit: "cover" }}
               cover={
                 <Image alt="example" src={img2} height={250} width={250} />
               }
-            ></Card>
+            ></Card> */}
+
+            <Image alt="example" src={img2} />
           </Col>
 
           <Col sm={12} md={8} lg={8}>
-            <Card hoverable style={{ width: 550 }}>
+            {/* <Card hoverable style={{ width: 550 }}>
               <p style={content}>Service name:{data?.name}</p>
               <p style={content}>Category:{data?.category}</p>
               <p style={content}>Price:{data?.price}</p>
               <Button type="primary">Book the Service</Button>
 
               <Image src={img1} alt="" style={{ marginLeft: "10rem" }}></Image>
-            </Card>
+            </Card> */}
+            <></>
           </Col>
         </Row>
-
-       
       </HomePageLayout>
     </>
   );
