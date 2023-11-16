@@ -25,12 +25,12 @@ export default function Service() {
       ></Image>
       <h2 className={styles.contentHeader}>Available Service</h2>
 
-      <Row className={styles.serviceRowStyle} gutter={[20, 40]}>
+      <Row className={styles.serviceRowStyle}>
         {data?.service?.map((service, index) => (
           <Col xs={24} sm={12} md={6} key={index}>
             <Card
               hoverable
-              style={{ width: 250, height: 320 }}
+              className={styles.serviceCard}
               cover={
                 <Image alt="example" src={img2} height={180} width={280} />
               }

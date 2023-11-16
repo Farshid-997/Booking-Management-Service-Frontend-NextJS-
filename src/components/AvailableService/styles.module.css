@@ -12,6 +12,10 @@
   padding-right: 5rem;
   margin-bottom: 4rem;
 }
+.serviceCard {
+  width: 250px;
+  height: 320px;
+}
 
 .serviceHeaderImage {
   margin-left: 48rem;
@@ -64,14 +68,34 @@
 
   .serviceRowStyle {
     margin-top: 1rem;
-    padding-left: 4rem;
-    padding-right: 5rem;
-    margin-bottom: 1rem;
+    padding-left: 2.8rem;
+    padding-right: 2rem;
   }
 
   .serviceHeaderImage {
     margin-left: 1rem;
     margin-top: 3rem;
+  }
+
+  .cartIcon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 40px;
+    top: -38px;
+  }
+
+  .serviceBtn {
+    padding: 8px;
+
+    width: 20vh;
+    margin-top: 1.3rem;
+  }
+
+  .serviceCard {
+    width: 280px;
+    height: 350px;
+    margin-bottom: 3rem;
   }
 }
 
