@@ -7,7 +7,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  /* margin-right: 4rem; */
+  margin-left: 2rem;
   transition: transform 0.7s ease-in-out;
 }
 
@@ -23,7 +23,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  /* margin-right: 3rem; */
+  margin-left: 5rem;
   transition: transform 0.7s ease-in-out;
 }
 .inviteDiv1:hover {
@@ -38,7 +38,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  /* margin-right: 4rem; */
+  margin-left: 8.3rem;
   transition: transform 0.7s ease-in-out;
 }
 .inviteDiv2:hover {
@@ -67,11 +67,55 @@
   font-size: 20px;
   font-family: "Grandstander", cursive;
 }
-.eventsPara {
+
+.btnEvents1 {
+  margin-top: 2rem;
+  margin-left: 5.5rem;
+  width: 250px;
+  padding: 10px;
+  border: none;
+  background-color: #a5aa9c;
+  color: white;
   font-size: 20px;
+
+  font-family: "Grandstander", cursive;
+}
+
+.btnEvents2 {
+  margin-top: 2rem;
+  margin-left: 9rem;
+  width: 250px;
+  padding: 10px;
+  border: none;
+  background-color: #a5aa9c;
+  color: white;
+  font-size: 20px;
+  font-family: "Grandstander", cursive;
+}
+
+.eventsPara {
+  font-size: 115%;
   margin-left: 3rem;
   margin-top: 1rem;
   line-height: 30px;
+  font-family: "Grandstander", cursive;
+  color: #1f1c3f;
+}
+
+.eventsPara1 {
+  font-size: 115%;
+  margin-left: 5.2rem;
+  margin-top: 1rem;
+  line-height: 30px;
+  font-family: "Grandstander", cursive;
+  color: #1f1c3f;
+}
+
+.eventsPara2 {
+  font-size: 112%;
+  margin-left: 9rem;
+  margin-top: 1rem;
+  line-height: 25px;
   font-family: "Grandstander", cursive;
   color: #1f1c3f;
 }
@@ -80,7 +124,7 @@
   .comingHeader {
     font-size: 30px;
     margin-top: 2rem;
-
+    margin-left: -1rem;
     margin-bottom: 3rem;
   }
   .rowComingStyles {
@@ -92,18 +136,41 @@
   .inviteDiv {
     width: 270px;
     height: 260px;
+    margin-left: -1rem;
   }
   .inviteDiv1 {
     width: 270px;
     height: 260px;
+    margin-left: -1rem;
   }
   .inviteDiv2 {
-     width: 270px;
+    width: 270px;
     height: 260px;
+    margin-left: -1rem;
   }
 
   .eventsPara {
-    font-size: 18px;
+    font-size: 100%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 27px;
+    white-space: no-wrap;
+    width: 200px;
+  }
+
+  .eventsPara1 {
+    font-size: 100%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 27px;
+    white-space: no-wrap;
+    width: 200px;
+  }
+
+  .eventsPara2 {
+    font-size: 100%;
     margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -113,7 +180,23 @@
   }
   .btnEvents {
     margin-top: 2rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    width: 200px;
+    padding: 15px;
+
+    font-size: 13px;
+  }
+  .btnEvents1 {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    width: 200px;
+    padding: 15px;
+
+    font-size: 13px;
+  }
+  .btnEvents2 {
+    margin-top: 2rem;
+    margin-left: 1rem;
     width: 200px;
     padding: 15px;
 
