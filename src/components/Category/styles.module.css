@@ -42,8 +42,9 @@
   }
   .catImage {
     margin-top: -15rem;
-    margin-left: -4rem;
-    width: 75vh;
+    margin-left: -3.6rem;
+    margin-right: 3rem;
+    width: 62vh;
     object-fit: contain;
   }
 }
