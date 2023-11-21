@@ -17,41 +17,37 @@ export default function Category() {
         <Image src={img5} alt="" className={styles.catImage}></Image>
       </div>
 
-      <Row className={styles.categoryRowStyle} gutter={[24, 24]}>
-        <Col xs={24} sm={12} md={6}>
+      <Row className={styles.categoryRowStyle}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 250 }}
+            className={styles.catcard}
             cover={<Image alt="example" src={img1} width={200} height={200} />}
           >
             <p className={styles.catPara}>Wedding Cake</p>
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 250 }}
+            className={styles.catcard}
             cover={<Image alt="example" src={img4} width={200} height={200} />}
           >
             <p className={styles.catPara}>Wedding Dress</p>
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 250 }}
+            className={styles.catcard}
             cover={<Image alt="example" src={img2} width={162} height={200} />}
           >
             <p className={styles.catPara}>Wedding Earrings</p>
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 250 }}
+            className={styles.catcard}
             cover={<Image alt="example" src={img3} width={162} height={200} />}
           >
             <p className={styles.catPara}>Wedding Shoes</p>

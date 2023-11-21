@@ -78,15 +78,45 @@
 
 @media only screen and (max-width: 765px) {
   .comingHeader {
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 2rem;
-    margin-left: -4rem;
+
     margin-bottom: 3rem;
   }
   .rowComingStyles {
     margin-top: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 10rem;
+    padding-left: 3rem;
+    /* padding-right: 10rem; */
     margin-bottom: 1rem;
+  }
+  .inviteDiv {
+    width: 270px;
+    height: 260px;
+  }
+  .inviteDiv1 {
+    width: 270px;
+    height: 260px;
+  }
+  .inviteDiv2 {
+     width: 270px;
+    height: 260px;
+  }
+
+  .eventsPara {
+    font-size: 18px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 27px;
+    white-space: no-wrap;
+    width: 200px;
+  }
+  .btnEvents {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 200px;
+    padding: 15px;
+
+    font-size: 13px;
   }
 }

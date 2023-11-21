@@ -13,11 +13,12 @@ export default function UpComingService() {
     <div>
       <h2 className={styles.contentHeaderStyle}>UP Coming Service</h2>
 
-      <Row className={styles.contentRowStyle} gutter={[8, 8]}>
-        <Col xs={24} sm={12} md={6}>
+      <Row className={styles.contentRowStyle}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             hoverable
-            style={{ width: 300 }}
+            // style={{ width: 300 }}
+            className={styles.upcard}
             cover={
               <Image
                 alt="example"
@@ -32,10 +33,10 @@ export default function UpComingService() {
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 300 }}
+            // style={{ width: 300 }}
+            className={styles.upcard}
             cover={
               <Image
                 alt="example"
@@ -48,10 +49,10 @@ export default function UpComingService() {
             <p className={styles.cardPara}> Wedding Accessories</p>
           </Card>
         </Col>
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
-            hoverable
-            style={{ width: 300 }}
+            // style={{ width: 300 }}
+            className={styles.upcard}
             cover={
               <Image
                 alt="example"
@@ -65,10 +66,11 @@ export default function UpComingService() {
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             hoverable
-            style={{ width: 300 }}
+            // style={{ width: 300 }}
+            className={styles.upcard}
             cover={
               <Image
                 alt="example"

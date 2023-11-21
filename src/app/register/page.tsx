@@ -8,7 +8,7 @@ import { SubmitHandler } from "react-hook-form";
 import Link from "next/link";
 import HomePageLayout from "../(withoutlayout)/layout";
 import { useUserRegisterMutation } from "@/redux/api/authApi";
-
+import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 
 type FormValues = {

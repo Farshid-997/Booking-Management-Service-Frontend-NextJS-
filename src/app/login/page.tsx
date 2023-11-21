@@ -10,6 +10,7 @@ import { useUserLoginMutation } from "@/redux/api/authApi";
 import { storeUserInfo } from "@/service/auth.service";
 import HomePageLayout from "../(withoutlayout)/layout";
 import { useRouter } from "next/navigation";
+import styles from "./styles.module.css";
 type FormValues = {
   email: string;
   password: string;
@@ -42,7 +43,11 @@ const LoginPage = () => {
         }}
       >
         <Col sm={12} md={16} lg={10}>
-          <Image src={loginImage} width={500} alt="login image" />
+          <Image
+            src={loginImage}
+            className={styles.loginImage}
+            alt="login image"
+          />
         </Col>
         <Col sm={12} md={8} lg={8}>
           <h1

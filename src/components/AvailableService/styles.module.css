@@ -15,6 +15,7 @@
 .serviceCard {
   width: 250px;
   height: 320px;
+  margin-bottom: 2rem;
 }
 
 .serviceHeaderImage {
@@ -58,7 +59,7 @@
 }
 @media only screen and (max-width: 765px) {
   .contentHeader {
-    font-size: 22px;
+    font-size: 30px;
     margin-top: 2rem;
   }
   .serviceTitle {
@@ -81,7 +82,7 @@
     width: 25px;
     height: 25px;
     position: absolute;
-    left: 40px;
+    left: 88px;
     top: -38px;
   }
 

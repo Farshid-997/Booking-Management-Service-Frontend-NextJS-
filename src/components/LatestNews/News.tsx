@@ -19,11 +19,12 @@ export default function News() {
     <div>
       <h1 className={styles.newsHeader}>Our Latest Wedding News</h1>
 
-      <Row className={styles.rowNewsStyle} gutter={[16, 16]}>
-        <Col xs={24} sm={12} md={6}>
+      <Row className={styles.rowNewsStyle}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            // style={{ width: 250 }}
+            className={styles.reviewCard}
             cover={<Image alt="example" src={img1} width={200} height={200} />}
           >
             {" "}
@@ -34,10 +35,11 @@ export default function News() {
           </Card>
         </Col>
 
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            // style={{ width: 250 }}
+            className={styles.reviewCard}
             cover={
               <Image
                 alt="example"
@@ -56,10 +58,11 @@ export default function News() {
             </p>
           </Card>
         </Col>
-        <Col xs={24} sm={12} md={6}>
+        <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            // style={{ width: 250 }}
+            className={styles.reviewCard}
             cover={<Image alt="example" src={img3} width={200} height={200} />}
           >
             {" "}

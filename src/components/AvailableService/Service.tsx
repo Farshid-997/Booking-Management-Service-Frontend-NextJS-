@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card } from "antd";
+import { Card } from "antd";
 import Image from "next/image";
 import img2 from "../../assets/R (2).jpg";
 
@@ -27,7 +27,7 @@ export default function Service() {
 
       <Row className={styles.serviceRowStyle}>
         {data?.service?.map((service, index) => (
-          <Col xs={24} sm={12} md={6} key={index}>
+          <Col xs={24} sm={12} md={12} lg={6} key={index}>
             <Card
               hoverable
               className={styles.serviceCard}
@@ -40,7 +40,7 @@ export default function Service() {
               <p className={styles.pricetext}>Price:{service?.price} BDT</p>
 
               <Row>
-                <Col xs={24} sm={12} md={6} key={index}>
+                <Col xs={24} sm={12} md={12} lg={6} key={index}>
                   <Link href={`/seeDetails/${service?.id}`}>
                     <button
                       className={styles.serviceBtn}
@@ -51,7 +51,7 @@ export default function Service() {
                   </Link>
                 </Col>
 
-                <Col xs={24} sm={12} md={6} key={index}>
+                <Col xs={24} sm={12} md={12} lg={6} key={index}>
                   <BsFillCartCheckFill className={styles.cartIcon} />
                 </Col>
               </Row>
