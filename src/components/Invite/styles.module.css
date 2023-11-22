@@ -136,17 +136,17 @@
   .inviteDiv {
     width: 270px;
     height: 260px;
-    margin-left: -1rem;
+    margin-left: 0.2rem;
   }
   .inviteDiv1 {
     width: 270px;
     height: 260px;
-    margin-left: -1rem;
+    margin-left: 0.2rem;
   }
   .inviteDiv2 {
     width: 270px;
     height: 260px;
-    margin-left: -1rem;
+    margin-left: 0.2rem;
   }
 
   .eventsPara {
@@ -180,7 +180,7 @@
   }
   .btnEvents {
     margin-top: 2rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     width: 200px;
     padding: 15px;
 
@@ -188,7 +188,7 @@
   }
   .btnEvents1 {
     margin-top: 2rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     width: 200px;
     padding: 15px;
 
@@ -196,7 +196,7 @@
   }
   .btnEvents2 {
     margin-top: 2rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     width: 200px;
     padding: 15px;
 

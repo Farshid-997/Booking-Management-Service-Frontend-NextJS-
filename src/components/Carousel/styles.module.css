@@ -6,19 +6,7 @@
   padding: 30px;
   font-family: "Sail", cursive;
 }
-/* .para1 {
-  font-size: 25px;
-  cursor: pointer;
-  position: absolute;
-  top: 180px;
-  left: 70px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #9aa497;
-  color: whitesmoke;
-  border: none;
-  font-family: "Grandstander", cursive;
-} */
+
 .para1:hover {
   background-color: #f4f8fc;
   color: black;
@@ -34,6 +22,9 @@
   border-radius: 10px;
   cursor: pointer;
   font-family: "Grandstander", cursive;
+}
+.purchaseButton:hover {
+  background-color: #6bbd99;
 }
 @media only screen and (max-width: 765px) {
   .para {

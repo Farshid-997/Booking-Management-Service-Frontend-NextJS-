@@ -8,7 +8,7 @@
 }
 .categoryRowStyle {
   margin-top: -5rem;
-  padding-left: 25rem;
+  padding-left: 15rem;
   padding-right: 15rem;
   margin-bottom: 4rem;
 }
@@ -28,9 +28,16 @@
   color: #1f1c3f;
 }
 .catcard {
-  width: 300px;
-  height: auto;
+  margin-left: 4rem;
+  cursor: pointer;
 }
+
+.cardimage {
+  width: 100%;
+  height: 30vh;
+}
+
+
 @media only screen and (max-width: 765px) {
   .categoryHeader {
     font-size: 30px;
@@ -47,8 +54,13 @@
   .catImage {
     display: none;
   }
+
+  .cardimage {
+    height: 35vh;
+  }
+
   .catcard {
-    height: auto;
+    margin-left: 0.5rem;
     width: 80vw;
     margin-bottom: 2rem;
   }

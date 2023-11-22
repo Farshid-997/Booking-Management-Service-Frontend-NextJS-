@@ -2,7 +2,7 @@
 
 import { Avatar, Card, Col, Row } from "antd";
 import img1 from "../../assets/8.jpg";
-import img2 from "../../assets/3.jpg";
+import img2 from "../../assets/img-6.jpg";
 import img3 from "../../assets/4.jpg";
 import img4 from "../../assets/img-3.jpg";
 import img5 from "../../assets/img-4.jpg";
@@ -21,7 +21,11 @@ export default function Category() {
         <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             className={styles.catcard}
-            cover={<Image alt="example" src={img1} width={200} height={200} />}
+            cover={
+              <>
+                <Image alt="example" src={img1} className={styles.cardimage} />
+              </>
+            }
           >
             <p className={styles.catPara}>Wedding Cake</p>
           </Card>
@@ -30,7 +34,9 @@ export default function Category() {
         <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             className={styles.catcard}
-            cover={<Image alt="example" src={img4} width={200} height={200} />}
+            cover={
+              <Image alt="example" src={img4} className={styles.cardimage} />
+            }
           >
             <p className={styles.catPara}>Wedding Dress</p>
           </Card>
@@ -39,16 +45,20 @@ export default function Category() {
         <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             className={styles.catcard}
-            cover={<Image alt="example" src={img2} width={162} height={200} />}
+            cover={
+              <Image alt="example" src={img2} className={styles.cardimage} />
+            }
           >
-            <p className={styles.catPara}>Wedding Earrings</p>
+            <p className={styles.catPara}>Men's Outfit</p>
           </Card>
         </Col>
 
         <Col xs={24} sm={12} md={12} lg={6}>
           <Card
             className={styles.catcard}
-            cover={<Image alt="example" src={img3} width={162} height={200} />}
+            cover={
+              <Image alt="example" src={img3} className={styles.cardimage} />
+            }
           >
             <p className={styles.catPara}>Wedding Shoes</p>
           </Card>

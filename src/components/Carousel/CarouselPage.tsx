@@ -4,6 +4,7 @@ import img1 from "../../assets/planner-shop-dress-1.png";
 
 import styles from "./styles.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const CarouselPage = () => (
   <Row gutter={[8, 8]}>
@@ -14,7 +15,9 @@ const CarouselPage = () => (
         want that your dreamy wedding will made with us!
       </p>
 
-      <button className={styles.purchaseButton}>Purchase Now</button>
+      <Link href="/user/service">
+        <button className={styles.purchaseButton}>Purchase Now</button>
+      </Link>
     </Col>
 
     <Col xs={24} sm={12} md={6} xl={12}>

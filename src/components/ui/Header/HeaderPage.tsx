@@ -48,8 +48,6 @@ export default function HeaderPage() {
           }}
           mode="horizontal"
         >
-          <BsCart4 className={styles.headerCartIcon} />
-
           {isLoggedIn() ? (
             <Avatar
               style={{

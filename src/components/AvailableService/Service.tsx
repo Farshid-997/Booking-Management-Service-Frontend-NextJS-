@@ -10,6 +10,7 @@ import { useGetServiceQuery } from "@/redux/api/serviceApi";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import { BsFillCartCheckFill } from "react-icons/bs";
+
 const { Meta } = Card;
 
 export default function Service() {
@@ -52,7 +53,9 @@ export default function Service() {
                 </Col>
 
                 <Col xs={24} sm={12} md={12} lg={6} key={index}>
-                  <BsFillCartCheckFill className={styles.cartIcon} />
+                  <Link href="/user/service">
+                    <BsFillCartCheckFill className={styles.cartIcon} />
+                  </Link>
                 </Col>
               </Row>
             </Card>
