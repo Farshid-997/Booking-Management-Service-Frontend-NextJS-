@@ -45,6 +45,8 @@ export interface IBooking {
   status: string;
   user?: IUser;
   service?: IService;
+  customerAddress: string;
+  phone: string;
 }
 export interface IReview {
   id: any;

@@ -11,8 +11,6 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 import { BsFillCartCheckFill } from "react-icons/bs";
 
-const { Meta } = Card;
-
 export default function Service() {
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetServiceQuery({ ...query });
@@ -45,18 +43,18 @@ export default function Service() {
                   <Link href={`/seeDetails/${service?.id}`}>
                     <button
                       className={styles.serviceBtn}
-                      style={{ marginTop: "8px" }}
+                      style={{ marginTop: "8px", cursor: "pointer" }}
                     >
                       See Details
                     </button>
                   </Link>
                 </Col>
 
-                <Col xs={24} sm={12} md={12} lg={6} key={index}>
-                  <Link href="/user/service">
+                {/* <Col xs={24} sm={12} md={12} lg={6} key={index}>
+                  <Link href={`/user/service/${service?.id}`}>
                     <BsFillCartCheckFill className={styles.cartIcon} />
                   </Link>
-                </Col>
+                </Col> */}
               </Row>
             </Card>
           </Col>

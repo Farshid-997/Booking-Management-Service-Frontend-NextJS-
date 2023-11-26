@@ -1,12 +1,15 @@
 "use client";
-import { Button, Card } from "antd";
+import { Divider } from "antd";
 import HomePageLayout from "@/app/(withoutlayout)/layout";
 import { useGetSingleServiceQuery } from "@/redux/api/serviceApi";
 import { Col, Row } from "antd";
 import img2 from "../../../assets/d.jpg";
-
+import styles from "./styles.module.css";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+
+import { StarFilled } from "@ant-design/icons";
+import Link from "next/link";
 type IDProps = {
   params: any;
 };
@@ -14,22 +17,10 @@ function ServiceDetailsPage({ params }: IDProps) {
   const { id } = params;
   const { data, isLoading } = useGetSingleServiceQuery(id);
 
-  const header: React.CSSProperties = {
-    textAlign: "center",
-    marginTop: "1rem",
-    fontSize: "50px",
-    textDecoration: "underline",
-  };
-
-  const content: React.CSSProperties = {
-    fontSize: "25px",
-    color: "green",
-  };
-
   return (
     <>
       <HomePageLayout>
-        <h2 style={header}>See the Details</h2>
+        <h2 className={styles.header}>See the Details</h2>
 
         <Row
           justify="center"
@@ -39,28 +30,36 @@ function ServiceDetailsPage({ params }: IDProps) {
           }}
         >
           <Col sm={12} md={8} lg={8}>
-            {/* <Card
-              hoverable
-              style={{ width: 250, objectFit: "cover" }}
-              cover={
-                <Image alt="example" src={img2} height={250} width={250} />
-              }
-            ></Card> */}
-
-            <Image alt="example" src={img2} />
+            <div className={styles.imageDiv}>
+              <Image src={img2} alt="" className={styles.imageData}></Image>
+            </div>
           </Col>
 
           <Col sm={12} md={8} lg={8}>
-            {/* <Card hoverable style={{ width: 550 }}>
-              <p style={content}>Service name:{data?.name}</p>
-              <p style={content}>Category:{data?.category}</p>
-              <p style={content}>Price:{data?.price}</p>
-              <Button type="primary">Book the Service</Button>
+            <div className={styles.contentDiv}>
+              <h3 className={styles.contName}>{data?.name}</h3>
+              <p className={styles.price}>{data?.price}BDT</p>
 
-              <Image src={img1} alt="" style={{ marginLeft: "10rem" }}></Image>
-            </Card> */}
-            <></>
+              <p className={styles.description}>
+                {data?.description.slice(0, 300)}...
+              </p>
+
+              <Link href={`/user/service/${data?.id}`}>
+                <button className={styles.bookButton}>Book the Service</button>
+              </Link>
+
+              <p className={styles.category}>Categories: {data?.category}</p>
+
+              {/* <div className={styles.reviewStar}>
+                <StarFilled style={{ fontSize: "30px" }} />
+                <StarFilled style={{ fontSize: "30px", marginLeft: "1rem" }} />
+                <StarFilled style={{ fontSize: "30px", marginLeft: "1rem" }} />
+                <StarFilled style={{ fontSize: "30px", marginLeft: "1rem" }} />
+                <StarFilled style={{ fontSize: "30px", marginLeft: "1rem" }} />
+              </div> */}
+            </div>
           </Col>
+          <Divider />
         </Row>
       </HomePageLayout>
     </>

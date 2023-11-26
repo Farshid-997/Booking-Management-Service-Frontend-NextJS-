@@ -6,13 +6,23 @@ import { Button, Col, Row, message } from "antd";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useCreateBookingMutation } from "@/redux/api/bookingApi";
+import { getUserInfo } from "@/service/auth.service";
 type FormValues = {
   userId: string;
   serviceId: string;
-  date: string;
+  date: Date;
   staus: string;
+  customerAddress: string;
+  phone: string;
 };
-export default function Booking() {
+
+type IDProps = {
+  params: any;
+};
+export default function Booking({ params }: IDProps) {
+  const { id } = params;
+  const { userId } = getUserInfo() as any;
+
   const [createBooking] = useCreateBookingMutation();
   const router = useRouter();
 
@@ -28,7 +38,11 @@ export default function Booking() {
   };
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     try {
-      const res = await createBooking({ ...data }).unwrap();
+      const res = await createBooking({
+        ...data,
+        userId: userId,
+        serviceId: id,
+      }).unwrap();
 
       if (res) {
         message.success("Booking Added successfully!");
@@ -45,20 +59,20 @@ export default function Booking() {
       <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={formDiv}>
           <Col className="gutter-row" span={8} style={{ marginBottom: "10px" }}>
-            <FormInput type="text" name="userId" size="large" label="UserID" />
+            <FormInput type="date" name="date" size="large" label="date" />
           </Col>
 
           <Col className="gutter-row" span={8} style={{ marginBottom: "10px" }}>
             <FormInput
               type="text"
-              name="serviceId"
+              name="customerAddress"
               size="large"
-              label="ServiceID"
+              label="address"
             />
           </Col>
 
           <Col className="gutter-row" span={8} style={{ marginBottom: "10px" }}>
-            <FormInput type="text" name="date" size="large" label="date" />
+            <FormInput type="text" name="phone" size="large" label="phone" />
           </Col>
 
           <Col className="gutter-row" span={8} style={{ marginBottom: "10px" }}>
@@ -71,7 +85,7 @@ export default function Booking() {
           style={{ marginLeft: "25px", marginBottom: "8px" }}
           size="large"
         >
-          Add your service
+          Book your service
         </Button>
       </Form>
     </div>

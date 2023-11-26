@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { Avatar, Card, Col, Row } from "antd";
+import { Card, Col, Row } from "antd";
 import img1 from "../../assets/8.jpg";
 import img2 from "../../assets/img-6.jpg";
 import img3 from "../../assets/4.jpg";
@@ -9,7 +9,7 @@ import img4 from "../../assets/img-3.jpg";
 import img5 from "../../assets/img-4.jpg";
 import styles from "./styles.module.css";
 import Image from "next/image";
-const { Meta } = Card;
+
 export default function Category() {
   return (
     <>

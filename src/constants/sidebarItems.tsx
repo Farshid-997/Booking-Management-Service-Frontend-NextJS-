@@ -2,7 +2,6 @@ import { Avatar, type MenuProps } from "antd";
 import {
   ProfileOutlined,
   TableOutlined,
-  AppstoreOutlined,
   FolderAddOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
@@ -105,7 +104,7 @@ export const sidebarItems = (role: string) => {
     ...defaultSidebarItems,
 
     {
-      label: <Link href={`/${role}/service`}>My Services</Link>,
+      label: <Link href={`/${role}/MyBookings`}>My Bookings</Link>,
       icon: <TableOutlined />,
       key: `/${role}/service`,
     },
@@ -114,6 +113,12 @@ export const sidebarItems = (role: string) => {
       label: <Link href={`/${role}/review`}>Service Review</Link>,
       icon: <TableOutlined />,
       key: `/${role}/review`,
+    },
+
+    {
+      label: <Link href={`/${role}/payment`}>My Payments</Link>,
+      icon: <TableOutlined />,
+      key: `/${role}/payment`,
     },
   ];
 
