@@ -42,7 +42,6 @@ const ManageUser = () => {
     query["searchTerm"] = debouncedSearchTerm;
   }
   const { data, isLoading } = useGetUserQuery({ ...query });
-  console.log("data", data);
 
   const user = data?.user;
   const meta = data?.meta;

@@ -24,7 +24,8 @@ export interface IService {
   name: string;
   description: string;
   price: string;
-  location: string;
+  image: string;
+
   category: string;
   availability: string;
 }

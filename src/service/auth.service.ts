@@ -29,9 +29,11 @@ export const removeUserInfo = (key: string) => {
   return localStorage.removeItem(key);
 };
 
+
+
 export const getNewAccessToken = async () => {
   return await axiosInstance({
-    url: `${getBaseUrl()}/auth/refresh-token`,
+    url: `https://booking-service-farshid-997.vercel.app/api/v1/auth/refresh-token`,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     withCredentials: true,

@@ -9,7 +9,6 @@ import img1 from "../../assets/arrangement9.png";
 import { useGetServiceQuery } from "@/redux/api/serviceApi";
 import Link from "next/link";
 import styles from "./styles.module.css";
-import { BsFillCartCheckFill } from "react-icons/bs";
 
 export default function Service() {
   const query: Record<string, any> = {};
@@ -31,7 +30,12 @@ export default function Service() {
               hoverable
               className={styles.serviceCard}
               cover={
-                <Image alt="example" src={img2} height={180} width={280} />
+                <Image
+                  alt="example"
+                  src={service?.image}
+                  height={180}
+                  width={280}
+                />
               }
             >
               <p className={styles.serviceTitle}>{service?.name}</p>

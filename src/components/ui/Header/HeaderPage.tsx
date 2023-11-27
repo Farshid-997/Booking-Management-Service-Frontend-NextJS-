@@ -66,7 +66,7 @@ export default function HeaderPage() {
           )}
           <SubMenu key="more" icon={<MenuOutlined />} title="More">
             <Menu.Item key="dashboard" icon={<DashboardOutlined />}>
-              <Link href="/user">Dashboard</Link>
+              <Link href={`/${role}`}>Dashboard</Link>
             </Menu.Item>
             <Menu.Item key="contact" icon={<PhoneOutlined />}>
               <Link href="/contact">Contact Us</Link>

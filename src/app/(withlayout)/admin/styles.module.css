@@ -1,0 +1,11 @@
+.profileHeader {
+  margin-left: 2rem;
+  font-size: 30px;
+  margin-top: 2rem;
+  font-weight: 400;
+  margin-bottom:2rem;
+  font-family: "Oswald", sans-serif;
+}
+.profileButton {
+  margin-left: 2rem;
+}

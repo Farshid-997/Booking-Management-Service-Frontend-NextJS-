@@ -4,10 +4,7 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import ActionBar from "@/components/ui/ActionBar/ActionBar";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import {
-  useGetSingleServiceQuery,
-  useUpdateServiceMutation,
-} from "@/redux/api/serviceApi";
+
 import {
   useGetSingleUserQuery,
   useUpdateUserMutation,
@@ -56,7 +53,7 @@ export default function EditUserPage({ params }: IDProps) {
         items={[
           {
             label: "admin",
-            link: `/${role}/admin`,
+            link: `/${role}`,
           },
           {
             label: "manage-user",
