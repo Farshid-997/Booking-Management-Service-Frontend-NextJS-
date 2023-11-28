@@ -1,11 +1,11 @@
 "use client";
-const { Header } = Layout;
-import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
+
+import { SearchOutlined, MenuOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 
 import logo from "../../../assets/shape.png";
 import Image from "next/image";
-import { Avatar, Button, Layout, Menu } from "antd";
+import { Button, Menu } from "antd";
 import Link from "next/link";
 import {
   getUserInfo,
@@ -15,7 +15,7 @@ import {
 import { useRouter } from "next/navigation";
 import { authKey } from "@/constants/storageKey";
 import { useState } from "react";
-const { SubMenu } = Menu;
+
 export default function HeaderPage() {
   const router = useRouter();
   const [menuActive, setMenuActive] = useState(false);
@@ -39,14 +39,17 @@ export default function HeaderPage() {
               width={50}
               height={50}
               style={{ marginTop: "1.4rem" }}
+              className={styles.logo}
             />
           </Link>
 
-          <h6 style={{ marginTop: "1rem" }}>Habibi</h6>
+          <h6 style={{ marginTop: "1rem" }} className={styles.headName}>
+            Habibi
+          </h6>
         </div>
 
         <MenuOutlined
-          className={`hamburgericon ${styles.hamburgericon}`}
+          className={`hamburger-icon ${styles.hamburgericon}`}
           onClick={toggleMenu}
         />
 
@@ -78,11 +81,11 @@ export default function HeaderPage() {
           </Link>
 
           <Link
-            href="/contact"
+            href={`/${role}`}
             style={{ marginLeft: "3rem", marginRight: "2rem", color: "black" }}
             className={styles.text3}
           >
-            Contact Us
+            <UserOutlined />
           </Link>
 
           <SearchOutlined
