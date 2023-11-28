@@ -1,17 +1,11 @@
 "use client";
 const { Header } = Layout;
-import {
-  MenuOutlined,
-  PhoneOutlined,
-  DashboardOutlined,
-  LoginOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
-import { BsCart4 } from "react-icons/bs";
+
 import logo from "../../../assets/shape.png";
 import Image from "next/image";
-import { Avatar, Layout, Menu } from "antd";
+import { Avatar, Button, Layout, Menu } from "antd";
 import Link from "next/link";
 import {
   getUserInfo,
@@ -20,60 +14,83 @@ import {
 } from "@/service/auth.service";
 import { useRouter } from "next/navigation";
 import { authKey } from "@/constants/storageKey";
+import { useState } from "react";
 const { SubMenu } = Menu;
 export default function HeaderPage() {
   const router = useRouter();
-
+  const [menuActive, setMenuActive] = useState(false);
   const logout = () => {
     removeUserInfo(authKey);
     router.push("/login");
   };
   const { role } = getUserInfo() as any;
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
   return (
     <>
-      <Header className={styles.headerStyle}>
-        <Link href="/">
-          <Image
-            src={logo}
-            alt="Logo"
-            width={50}
-            height={50}
-            style={{ marginTop: "2rem" }}
-          />
-        </Link>
-
-        <Menu
-          style={{
-            backgroundColor: "white",
-          }}
-          mode="horizontal"
-        >
-          {isLoggedIn() ? (
-            <Avatar
-              style={{
-                backgroundColor: "#87d068",
-                marginTop: "1.3rem",
-                cursor: "pointer",
-              }}
-              icon={<UserOutlined />}
-              onClick={logout}
-              size="small"
+      <div className={styles.menu}>
+        <div className={styles.logoContent}>
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Logo"
+              width={50}
+              height={50}
+              style={{ marginTop: "1.4rem" }}
             />
+          </Link>
+
+          <h6 style={{ marginTop: "1rem" }}>Habibi</h6>
+        </div>
+
+        <MenuOutlined
+          className={`hamburgericon ${styles.hamburgericon}`}
+          onClick={toggleMenu}
+        />
+
+        <div className={styles.contentMenu}>
+          {isLoggedIn() ? (
+            <Button onClick={logout} className={styles.logoutButton}>
+              Logout
+            </Button>
           ) : (
-            <Menu.Item key="home" icon={<LoginOutlined />}>
-              <Link href="/login">Login</Link>
-            </Menu.Item>
+            <p
+              style={{
+                marginLeft: "4rem",
+                marginRight: "2rem",
+                color: "black",
+              }}
+            >
+              <Link href="/login" className={styles.text1}>
+                Login
+              </Link>
+            </p>
           )}
-          <SubMenu key="more" icon={<MenuOutlined />} title="More">
-            <Menu.Item key="dashboard" icon={<DashboardOutlined />}>
-              <Link href={`/${role}`}>Dashboard</Link>
-            </Menu.Item>
-            <Menu.Item key="contact" icon={<PhoneOutlined />}>
-              <Link href="/contact">Contact Us</Link>
-            </Menu.Item>
-          </SubMenu>
-        </Menu>
-      </Header>
+
+          <Link
+            href={`/${role}`}
+            style={{ marginLeft: "3rem", color: "black" }}
+            className={styles.text2}
+          >
+            Dashboard
+          </Link>
+
+          <Link
+            href="/contact"
+            style={{ marginLeft: "3rem", marginRight: "2rem", color: "black" }}
+            className={styles.text3}
+          >
+            Contact Us
+          </Link>
+
+          <SearchOutlined
+            style={{ cursor: "pointer", marginRight: "3rem" }}
+            className={styles.searchIcon}
+          />
+        </div>
+      </div>
     </>
   );
 }
