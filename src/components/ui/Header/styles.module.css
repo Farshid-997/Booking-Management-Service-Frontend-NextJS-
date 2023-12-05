@@ -24,7 +24,19 @@
 .hamburgericon {
   display: none;
 }
-
+.logoutButton {
+  
+  margin-left: 2rem;
+}
+.contentMenu .text1 {
+  margin-left: -6rem;
+  margin-top: 2rem;
+  color: black;
+  text-decoration: none;
+}
+.searchIcon {
+  margin-left: 1.5rem;
+}
 @media screen and (max-width: 768px) {
   .hamburgericon {
     display: flex;
@@ -50,7 +62,7 @@
     font-size: 15px;
   }
 
-  .contentMenu a {
+  .contentMenu .text1 {
     padding: 1rem;
     text-align: center;
     color: black;
@@ -62,6 +74,7 @@
   }
   .searchIcon {
     margin-left: 5.5rem;
+    margin-top: 1rem;
   }
   .logoutButton {
     width: 150px;
@@ -69,6 +82,7 @@
   }
   .text2 {
     margin-left: 1rem;
+    margin-top: 1rem;
   }
   .text3 {
     margin-left: 3rem !important;

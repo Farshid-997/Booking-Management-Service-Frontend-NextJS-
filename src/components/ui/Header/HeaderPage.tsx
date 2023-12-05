@@ -48,10 +48,9 @@ export default function HeaderPage() {
           </h6>
         </div>
 
-        <MenuOutlined
-          className={`hamburger-icon ${styles.hamburgericon}`}
-          onClick={toggleMenu}
-        />
+        <div className={styles.hamburgericon} onClick={toggleMenu}>
+          -
+        </div>
 
         <div className={styles.contentMenu}>
           {isLoggedIn() ? (
@@ -59,17 +58,9 @@ export default function HeaderPage() {
               Logout
             </Button>
           ) : (
-            <p
-              style={{
-                marginLeft: "4rem",
-                marginRight: "2rem",
-                color: "black",
-              }}
-            >
-              <Link href="/login" className={styles.text1}>
-                Login
-              </Link>
-            </p>
+            <Link href="/login" className={styles.text1}>
+              Login
+            </Link>
           )}
 
           <Link
@@ -80,16 +71,8 @@ export default function HeaderPage() {
             Dashboard
           </Link>
 
-          <Link
-            href={`/${role}`}
-            style={{ marginLeft: "3rem", marginRight: "2rem", color: "black" }}
-            className={styles.text3}
-          >
-            <UserOutlined />
-          </Link>
-
           <SearchOutlined
-            style={{ cursor: "pointer", marginRight: "3rem" }}
+            style={{ cursor: "pointer", marginRight: "2rem" }}
             className={styles.searchIcon}
           />
         </div>
