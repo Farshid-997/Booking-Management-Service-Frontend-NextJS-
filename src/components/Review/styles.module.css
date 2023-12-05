@@ -26,13 +26,13 @@
   background-color: #f9faf8;
   border-radius: 30px;
   padding: 20px;
-  height: 45vh;
+  height: auto;
   margin-left: 3rem;
 }
 .reviewPara {
   margin-top: 1.5rem;
-  font-size: 22px;
-  line-height: 33px;
+  font-size: 18px;
+  line-height: 27px;
   font-family: "Grandstander", cursive;
   color: #1f1c3f;
 }

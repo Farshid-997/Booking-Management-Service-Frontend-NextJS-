@@ -28,15 +28,17 @@ export default function Review() {
                       <div>
                         <Rate allowHalf defaultValue={5} />
                       </div>
-                      <p>Paul Starr</p>
+                      <p className="ms-2">Paul Starr</p>
                     </Col>
                   </Row>
 
                   <p className={styles.reviewPara}>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Culpa sit rerum incidunt, a consequuntur recusandae ab saepe
-                    illo est quia obcaecati neque quibusdam eius accusamus error
-                    officiis atque voluptates magnam!
+                    Our experience with Habibi was nothing short of magical!
+                    From the first consultation to the grand finale, they
+                    executed every detail flawlessly. The team's creativity,
+                    professionalism, and dedication made our special day truly
+                    unforgettable. Thank you for turning our dreams into
+                    reality!
                   </p>
                 </div>
               </Col>
