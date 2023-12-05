@@ -35,7 +35,7 @@ export default function Review() {
                   <p className={styles.reviewPara}>
                     Our experience with Habibi was nothing short of magical!
                     From the first consultation to the grand finale, they
-                    executed every detail flawlessly. The team's creativity,
+                    executed every detail flawlessly. The creativity,
                     professionalism, and dedication made our special day truly
                     unforgettable. Thank you for turning our dreams into
                     reality!
