@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CarouselPage = () => (
-  <Row gutter={[8, 8]}>
+  <Row>
     <Col xs={24} sm={12} md={6} xl={12}>
       {/* <p className={styles.para1}>Offeres are Coming!!</p> */}
 

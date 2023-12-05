@@ -38,7 +38,7 @@
   width: 300px;
   height: 300px;
   overflow: hidden;
-  margin-left: 8.3rem;
+  margin-left: 9rem;
   transition: transform 0.7s ease-in-out;
 }
 .inviteDiv2:hover {
@@ -47,7 +47,7 @@
 .rowComingStyles {
   margin-top: 4rem;
   padding-left: 25rem;
-  padding-right: 15rem;
+  /* padding-right: 15rem; */
 }
 .comingHeader {
   color: #302e35;
@@ -66,6 +66,11 @@
   color: white;
   font-size: 20px;
   font-family: "Grandstander", cursive;
+  cursor: pointer;
+}
+
+.btnEvents:hover {
+  background-color: #6bbd99;
 }
 
 .btnEvents1 {
@@ -77,13 +82,16 @@
   background-color: #a5aa9c;
   color: white;
   font-size: 20px;
-
+  cursor: pointer;
   font-family: "Grandstander", cursive;
+}
+.btnEvent1:hover {
+  background-color: #6bbd99;
 }
 
 .btnEvents2 {
   margin-top: 2rem;
-  margin-left: 9rem;
+  margin-left: 9.3rem;
   width: 250px;
   padding: 10px;
   border: none;
@@ -91,31 +99,40 @@
   color: white;
   font-size: 20px;
   font-family: "Grandstander", cursive;
+   cursor: pointer;
+}
+
+.btnEvents2:hover {
+  background-color: #6bbd99;
 }
 
 .eventsPara {
-  font-size: 115%;
-  margin-left: 3rem;
+  font-size: 16.1px;
+  margin-left: 2rem;
   margin-top: 1rem;
   line-height: 30px;
   font-family: "Grandstander", cursive;
   color: #1f1c3f;
+  padding: 10px;
 }
 
 .eventsPara1 {
-  font-size: 115%;
+  font-size: 16.1px;
   margin-left: 5.2rem;
   margin-top: 1rem;
   line-height: 30px;
   font-family: "Grandstander", cursive;
   color: #1f1c3f;
+  padding: 10px;
 }
 
 .eventsPara2 {
-  font-size: 112%;
-  margin-left: 9rem;
+  font-size: 16.1px;
+  margin-left: 8.4rem;
   margin-top: 1rem;
-  line-height: 25px;
+  line-height: 30px;
+
+  padding: 10px;
   font-family: "Grandstander", cursive;
   color: #1f1c3f;
 }

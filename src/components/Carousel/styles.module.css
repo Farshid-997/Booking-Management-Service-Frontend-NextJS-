@@ -34,7 +34,7 @@
     line-height: 30px;
     padding: 30px;
   }
- 
+
   .purchaseButton {
     padding: 18px;
 
@@ -46,7 +46,8 @@
   .heroImage {
     width: 400px;
     height: 400px;
-    margin-left: -2rem;
-    object-fit: contain;
+    margin-left: 0.3rem;
+    margin-top: 1rem;
+    object-fit: cover;
   }
 }

@@ -2,7 +2,7 @@
 
 import { SearchOutlined, MenuOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
-
+import { RxHamburgerMenu } from "react-icons/rx";
 import logo from "../../../assets/shape.png";
 import Image from "next/image";
 import { Button, Menu } from "antd";
@@ -49,7 +49,7 @@ export default function HeaderPage() {
         </div>
 
         <div className={styles.hamburgericon} onClick={toggleMenu}>
-          -
+          <RxHamburgerMenu />
         </div>
 
         <div className={styles.contentMenu}>
@@ -65,16 +65,13 @@ export default function HeaderPage() {
 
           <Link
             href={`/${role}`}
-            style={{ marginLeft: "3rem", color: "black" }}
+            // style={{ marginLeft: "3rem", color: "black" }}
             className={styles.text2}
           >
             Dashboard
           </Link>
 
-          <SearchOutlined
-            style={{ cursor: "pointer", marginRight: "2rem" }}
-            className={styles.searchIcon}
-          />
+          <SearchOutlined className={styles.searchIcon} />
         </div>
       </div>
     </>

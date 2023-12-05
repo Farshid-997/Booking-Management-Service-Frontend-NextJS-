@@ -69,8 +69,8 @@
 
   .serviceRowStyle {
     margin-top: 1rem;
-    padding-left: 2.8rem;
-    padding-right: 2rem;
+    padding-left: 2.4rem;
+    /* padding-right: 2rem; */
   }
 
   .serviceHeaderImage {
@@ -94,7 +94,7 @@
   }
 
   .serviceCard {
-    width: 280px;
+    width: 80vw;
     height: 350px;
     margin-bottom: 3rem;
   }

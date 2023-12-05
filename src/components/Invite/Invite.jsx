@@ -33,7 +33,7 @@ export default function Invite() {
           <button className={styles.btnEvents2}>The Wedding</button>
           <p className={styles.eventsPara2}>
             Monday, 12 Apr. 2022 1:00 PM – 2:30 PM 4517 Washington Ave.
-            Manchester, Kentucky 39495 +1 234-567-8910 See Location
+            Manchester, Kentucky 39495 +1 234-567-8910
           </p>
         </Col>
       </Row>

@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: 9vh;
   border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid rgb(235, 226, 226);
 }
 .logoContent {
   display: flex;
@@ -25,14 +26,19 @@
   display: none;
 }
 .logoutButton {
-  
   margin-left: 2rem;
 }
-.contentMenu .text1 {
+.text1 {
   margin-left: -6rem;
   margin-top: 2rem;
   color: black;
   text-decoration: none;
+}
+.text2 {
+  margin-left: 1rem;
+  color: black;
+  text-decoration: none;
+  margin-bottom: -2rem;
 }
 .searchIcon {
   margin-left: 1.5rem;
@@ -64,25 +70,32 @@
 
   .contentMenu .text1 {
     padding: 1rem;
-    text-align: center;
+    font-size: 20px;
     color: black;
     text-decoration: none;
+    margin-left: 1.2rem;
+    margin-top: -1rem;
   }
 
   .menu:hover .contentMenu {
     display: flex;
   }
   .searchIcon {
-    margin-left: 5.5rem;
-    margin-top: 1rem;
+    margin-left: 2.5rem;
+
+    margin-top: 2rem;
   }
   .logoutButton {
     width: 150px;
     margin-left: 2rem;
   }
-  .text2 {
-    margin-left: 1rem;
-    margin-top: 1rem;
+  .contentMenu .text2 {
+    padding: 1rem;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    margin-right: 1.2rem;
+    margin-top: -1rem;
   }
   .text3 {
     margin-left: 3rem !important;
