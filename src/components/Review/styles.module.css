@@ -7,8 +7,8 @@
 }
 .reviewRowStyle {
   margin-top: 4rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
   margin-bottom: 4rem;
 }
 
@@ -26,6 +26,7 @@
   background-color: #f9faf8;
   border-radius: 30px;
   padding: 20px;
+  width: 350px;
   height: auto;
   margin-left: 3rem;
 }
