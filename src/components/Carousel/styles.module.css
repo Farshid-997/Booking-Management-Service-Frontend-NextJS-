@@ -29,7 +29,7 @@
 @media only screen and (max-width: 765px) {
   .para {
     font-size: 20px;
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-left: 0.5rem;
     line-height: 30px;
     padding: 30px;
@@ -44,9 +44,9 @@
     font-size: 15px;
   }
   .heroImage {
-    width: 400px;
-    height: 400px;
-    margin-left: 0.3rem;
+    width: 350px;
+    height: 350px;
+    margin-right: 1rem;
     margin-top: 1rem;
     object-fit: cover;
   }

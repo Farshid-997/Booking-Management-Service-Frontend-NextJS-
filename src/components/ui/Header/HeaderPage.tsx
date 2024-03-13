@@ -71,7 +71,7 @@ export default function HeaderPage() {
             Dashboard
           </Link>
 
-          <SearchOutlined className={styles.searchIcon} />
+          {/* <SearchOutlined className={styles.searchIcon} /> */}
         </div>
       </div>
     </>
