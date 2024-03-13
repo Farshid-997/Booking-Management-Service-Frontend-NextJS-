@@ -63,13 +63,17 @@ export default function HeaderPage() {
             </Link>
           )}
 
-          <Link
+<div  className={styles.linkDiv}>
+
+<Link
             href={`/${role}`}
             // style={{ marginLeft: "3rem", color: "black" }}
             className={styles.text2}
           >
             Dashboard
           </Link>
+</div>
+          
 
           {/* <SearchOutlined className={styles.searchIcon} /> */}
         </div>

@@ -15,7 +15,7 @@ type FormValues = {
   name: string;
   email: string;
   username: string;
-  role: string;
+  // role: string;
   contactNo: string;
   password: string;
   address: string;
@@ -81,13 +81,13 @@ const RegisterPage = () => {
                 />
               </div>
 
-              <div
+              {/* <div
                 style={{
                   margin: "15px 0px",
                 }}
               >
                 <FormInput name="role" type="text" size="large" label="role" />
-              </div>
+              </div> */}
 
               <div
                 style={{
